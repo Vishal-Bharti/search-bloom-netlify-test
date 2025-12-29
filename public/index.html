@@ -1116,5 +1116,44 @@ a {
     }
   });
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".u-form");
+
+  if (!form) {
+    console.error("Form not found");
+    return;
+  }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    console.log("Submitting data:", data);
+
+    try {
+      const res = await fetch("/.netlify/functions/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      console.log("Server response:", result);
+
+      alert("Form submitted successfully!");
+      form.reset();
+    } catch (err) {
+      console.error("Submit failed:", err);
+      alert("Submission failed");
+    }
+  });
+});
+</script>
+
   </body>
   </html>
