@@ -1086,28 +1086,15 @@ a {
   });
   </script>
     <script>
-  Webflow.push(function() {
-    $(document).on('submit', 'form', function() {
-      // Refresh page after form submission in 10 seconds
-      setTimeout(function() { location.reload(true); }, 10000);
-    });
-  });
-  </script>
-    <script>
-  // Handle Netlify form success for showing success message
+  // Ensure form can submit on last step
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
-    const successMessage = document.querySelector('.u-success-message-block');
-    const errorMessage = document.querySelector('.u-error-message-block');
-
-    if (successMessage) {
-      // Hide success and error messages initially
-      successMessage.style.display = 'none';
-      if (errorMessage) errorMessage.style.display = 'none';
+    
+    if (form) {
+      // Let Netlify handle form submissions naturally
+      // The multi-step script will manage validation
+      console.log('Form ready for submission');
     }
-
-    // Let Netlify handle the form submission naturally
-    // The form will submit to the action URL and Netlify will process it
   });
   </script>
   </body>
