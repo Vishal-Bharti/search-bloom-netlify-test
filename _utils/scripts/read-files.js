@@ -37,22 +37,31 @@ function shouldIncludeFile(fileName) {
  * Recursively get all files in a directory
  */
 function getAllFiles(dirPath, arrayOfFiles = []) {
-  const files = fs.readdirSync(dirPath);
+  try {
+    const files = fs.readdirSync(dirPath);
 
-  files.forEach(file => {
-    const filePath = path.join(dirPath, file);
-    const stat = fs.statSync(filePath);
+    files.forEach(file => {
+      try {
+        const filePath = path.join(dirPath, file);
+        const stat = fs.statSync(filePath);
 
-    if (stat.isDirectory()) {
-      if (!shouldExcludeDir(file)) {
-        arrayOfFiles = getAllFiles(filePath, arrayOfFiles);
+        if (stat.isDirectory()) {
+          if (!shouldExcludeDir(file)) {
+            arrayOfFiles = getAllFiles(filePath, arrayOfFiles);
+          }
+        } else {
+          if (shouldIncludeFile(file)) {
+            arrayOfFiles.push(filePath);
+          }
+        }
+      } catch (error) {
+        // Skip files we can't access
+        console.error(`Warning: Cannot access ${file}: ${error.message}`);
       }
-    } else {
-      if (shouldIncludeFile(file)) {
-        arrayOfFiles.push(filePath);
-      }
-    }
-  });
+    });
+  } catch (error) {
+    console.error(`Warning: Cannot read directory ${dirPath}: ${error.message}`);
+  }
 
   return arrayOfFiles;
 }
@@ -69,12 +78,12 @@ function readAndDisplayFile(filePath) {
   console.log('='.repeat(80));
   
   try {
+    const stat = fs.statSync(filePath);
     const content = fs.readFileSync(filePath, 'utf8');
     const lines = content.split('\n').length;
-    const size = fs.statSync(filePath).size;
     
     console.log(`Type: ${ext.substring(1).toUpperCase()}`);
-    console.log(`Size: ${size} bytes`);
+    console.log(`Size: ${stat.size} bytes`);
     console.log(`Lines: ${lines}`);
     console.log('-'.repeat(80));
     
@@ -118,8 +127,16 @@ function main() {
   // Filter files based on pattern if provided
   let filesToRead = allFiles;
   if (pattern) {
-    const regex = new RegExp(pattern);
-    filesToRead = allFiles.filter(file => regex.test(path.relative(ROOT_DIR, file)));
+    try {
+      // Escape special regex characters if pattern looks like a simple glob
+      // Otherwise treat as regex but catch errors
+      const regex = new RegExp(pattern);
+      filesToRead = allFiles.filter(file => regex.test(path.relative(ROOT_DIR, file)));
+    } catch (error) {
+      console.error(`Error: Invalid pattern "${pattern}": ${error.message}`);
+      console.log('Please provide a valid regular expression pattern.');
+      process.exit(1);
+    }
   }
   
   // Sort files for consistent output
