@@ -18,7 +18,7 @@
     "serve": "npx @11ty/eleventy --serve",
     "build": "node ./node_modules/@11ty/eleventy/cmd.cjs",
     "local-backend": "npx netlify-cms-proxy-server",
-    "read-files": "node ./_utils/scripts/read-files.js"
+    "read-files": "node _utils/scripts/read-files.js"
   },
   "devDependencies": {
     "date-fns": "2.16.1",
