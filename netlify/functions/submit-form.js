@@ -1,14 +1,20 @@
 exports.handler = async (event) => {
-  // Parse the data sent from the form
-  const data = JSON.parse(event.body || "{}");
+  console.log("🔔 Function triggered");
 
-  // Log data to Netlify logs (for verification)
-  console.log("Form submission received:", data);
+  let data = {};
+  try {
+    data = JSON.parse(event.body);
+  } catch (e) {
+    console.log("❌ No JSON body received");
+  }
+
+  console.log("📩 Form Data:", data);
 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      message: "Form submitted successfully",
+      message: "Form received successfully",
+      received: data,
     }),
   };
 };
