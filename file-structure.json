@@ -1,0 +1,1283 @@
+{
+  "repository": "search-bloom-netlify-test",
+  "scanned": "2025-12-29T19:46:33.298Z",
+  "structure": [
+    {
+      "type": "file",
+      "path": ".eleventy.js",
+      "extension": ".js",
+      "size": 855,
+      "modified": "2025-12-29T19:39:15.412Z"
+    },
+    {
+      "type": "file",
+      "path": "LICENSE",
+      "extension": "",
+      "size": 1067,
+      "modified": "2025-12-29T19:39:15.412Z"
+    },
+    {
+      "type": "file",
+      "path": "REPOSITORY_FILES.md",
+      "extension": ".md",
+      "size": 7403,
+      "modified": "2025-12-29T19:45:36.536Z"
+    },
+    {
+      "type": "directory",
+      "path": "_utils",
+      "children": [
+        {
+          "type": "directory",
+          "path": "_utils/array",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/array/filters.js",
+              "extension": ".js",
+              "size": 2504,
+              "modified": "2025-12-29T19:39:15.412Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "_utils/collections",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/collections/compare.js",
+              "extension": ".js",
+              "size": 4883,
+              "modified": "2025-12-29T19:39:15.412Z"
+            },
+            {
+              "type": "file",
+              "path": "_utils/collections/filters.js",
+              "extension": ".js",
+              "size": 1801,
+              "modified": "2025-12-29T19:39:15.412Z"
+            },
+            {
+              "type": "file",
+              "path": "_utils/collections/index.js",
+              "extension": ".js",
+              "size": 210,
+              "modified": "2025-12-29T19:39:15.412Z"
+            },
+            {
+              "type": "file",
+              "path": "_utils/collections/memo.js",
+              "extension": ".js",
+              "size": 1109,
+              "modified": "2025-12-29T19:39:15.412Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "_utils/config",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/config/external-files.json",
+              "extension": ".json",
+              "size": 2,
+              "modified": "2025-12-29T19:39:15.412Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "_utils/date",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/date/filters.js",
+              "extension": ".js",
+              "size": 273,
+              "modified": "2025-12-29T19:39:15.412Z"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "path": "_utils/filters.js",
+          "extension": ".js",
+          "size": 496,
+          "modified": "2025-12-29T19:39:15.412Z"
+        },
+        {
+          "type": "file",
+          "path": "_utils/index.js",
+          "extension": ".js",
+          "size": 882,
+          "modified": "2025-12-29T19:39:15.412Z"
+        },
+        {
+          "type": "directory",
+          "path": "_utils/money",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/money/utils.js",
+              "extension": ".js",
+              "size": 2041,
+              "modified": "2025-12-29T19:39:15.412Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "_utils/scripts",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/scripts/optimize-assets.js",
+              "extension": ".js",
+              "size": 1406,
+              "modified": "2025-12-29T19:39:15.413Z"
+            },
+            {
+              "type": "file",
+              "path": "_utils/scripts/read-files.js",
+              "extension": ".js",
+              "size": 3721,
+              "modified": "2025-12-29T19:45:58.851Z"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "path": "_utils/search.js",
+          "extension": ".js",
+          "size": 2442,
+          "modified": "2025-12-29T19:39:15.413Z"
+        },
+        {
+          "type": "file",
+          "path": "_utils/shortcodes.js",
+          "extension": ".js",
+          "size": 9415,
+          "modified": "2025-12-29T19:39:15.413Z"
+        },
+        {
+          "type": "directory",
+          "path": "_utils/strings",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/strings/filters.js",
+              "extension": ".js",
+              "size": 1851,
+              "modified": "2025-12-29T19:39:15.413Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "_utils/transforms",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/transforms/index.js",
+              "extension": ".js",
+              "size": 608,
+              "modified": "2025-12-29T19:39:15.413Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "_utils/zip",
+          "children": [
+            {
+              "type": "file",
+              "path": "_utils/zip/index.js",
+              "extension": ".js",
+              "size": 1964,
+              "modified": "2025-12-29T19:39:15.413Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "path": "admin",
+      "children": [
+        {
+          "type": "file",
+          "path": "admin/config.yml",
+          "extension": ".yml",
+          "size": 115246,
+          "modified": "2025-12-29T19:39:15.413Z"
+        },
+        {
+          "type": "file",
+          "path": "admin/index.html",
+          "extension": ".html",
+          "size": 1979,
+          "modified": "2025-12-29T19:39:15.413Z"
+        },
+        {
+          "type": "file",
+          "path": "admin/preview.css",
+          "extension": ".css",
+          "size": 407,
+          "modified": "2025-12-29T19:39:15.413Z"
+        },
+        {
+          "type": "directory",
+          "path": "admin/widgets",
+          "children": [
+            {
+              "type": "file",
+              "path": "admin/widgets/price.js",
+              "extension": ".js",
+              "size": 2520,
+              "modified": "2025-12-29T19:39:15.413Z"
+            },
+            {
+              "type": "file",
+              "path": "admin/widgets/prop-table.js",
+              "extension": ".js",
+              "size": 1212,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "admin/widgets/prop-values.js",
+              "extension": ".js",
+              "size": 2498,
+              "modified": "2025-12-29T19:39:15.414Z"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "path": "admin/widgets.css",
+          "extension": ".css",
+          "size": 553,
+          "modified": "2025-12-29T19:39:15.413Z"
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "path": "cms",
+      "children": [
+        {
+          "type": "directory",
+          "path": "cms/_data",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/_data/colors.json",
+              "extension": ".json",
+              "size": 2,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/_data/images.json",
+              "extension": ".json",
+              "size": 4347,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/_data/links.json",
+              "extension": ".json",
+              "size": 995,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "directory",
+              "path": "cms/_data/settings",
+              "children": [
+                {
+                  "type": "file",
+                  "path": "cms/_data/settings/site.json",
+                  "extension": ".json",
+                  "size": 147,
+                  "modified": "2025-12-29T19:39:15.414Z"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "path": "cms/_data/texts.json",
+              "extension": ".json",
+              "size": 28253,
+              "modified": "2025-12-29T19:39:15.414Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/about-us",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/about-us/azeeza-easa.md",
+              "extension": ".md",
+              "size": 1791,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/about-us/rss.njk",
+              "extension": ".njk",
+              "size": 1923,
+              "modified": "2025-12-29T19:39:15.414Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/faq-registration-page",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/faq-registration-page/first-faq.md",
+              "extension": ".md",
+              "size": 428,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/faq-registration-page/rss.njk",
+              "extension": ".njk",
+              "size": 2016,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/faq-registration-page/second-faq.md",
+              "extension": ".md",
+              "size": 413,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/faq-registration-page/third-faq.md",
+              "extension": ".md",
+              "size": 415,
+              "modified": "2025-12-29T19:39:15.414Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/faq-school-page",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/faq-school-page/first-faq.md",
+              "extension": ".md",
+              "size": 375,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/faq-school-page/rss.njk",
+              "extension": ".njk",
+              "size": 1974,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/faq-school-page/second-faq.md",
+              "extension": ".md",
+              "size": 400,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/faq-school-page/third-faq.md",
+              "extension": ".md",
+              "size": 395,
+              "modified": "2025-12-29T19:39:15.414Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/pages",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/pages/404.md",
+              "extension": ".md",
+              "size": 174,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/candidate-registration.md",
+              "extension": ".md",
+              "size": 1318,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/index.md",
+              "extension": ".md",
+              "size": 373,
+              "modified": "2025-12-29T19:39:15.414Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/privacy-policy.md",
+              "extension": ".md",
+              "size": 822,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/refund-policy.md",
+              "extension": ".md",
+              "size": 236,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/robots.njk",
+              "extension": ".njk",
+              "size": 91,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/sitemap.njk",
+              "extension": ".njk",
+              "size": 782,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/pages/terms-conditions.md",
+              "extension": ".md",
+              "size": 902,
+              "modified": "2025-12-29T19:39:15.415Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/registration-page-announcement",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/registration-page-announcement/registration-page-announcement-one.md",
+              "extension": ".md",
+              "size": 357,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/registration-page-announcement/rss.njk",
+              "extension": ".njk",
+              "size": 2079,
+              "modified": "2025-12-29T19:39:15.415Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/school-page-announcement",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/school-page-announcement/rss.njk",
+              "extension": ".njk",
+              "size": 2033,
+              "modified": "2025-12-29T19:39:15.415Z"
+            }
+          ]
+        },
+        {
+          "type": "directory",
+          "path": "cms/services",
+          "children": [
+            {
+              "type": "file",
+              "path": "cms/services/admin-hiring.md",
+              "extension": ".md",
+              "size": 768,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/services/advisory-services.md",
+              "extension": ".md",
+              "size": 786,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/services/exit-interviews.md",
+              "extension": ".md",
+              "size": 778,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/services/leadership-hiring.md",
+              "extension": ".md",
+              "size": 819,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/services/rss.njk",
+              "extension": ".njk",
+              "size": 1923,
+              "modified": "2025-12-29T19:39:15.415Z"
+            },
+            {
+              "type": "file",
+              "path": "cms/services/teacher-recruitment.md",
+              "extension": ".md",
+              "size": 782,
+              "modified": "2025-12-29T19:39:15.415Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "path": "file-structure.json",
+      "extension": ".json",
+      "size": 0,
+      "modified": "2025-12-29T19:46:33.262Z"
+    },
+    {
+      "type": "directory",
+      "path": "netlify",
+      "children": [
+        {
+          "type": "directory",
+          "path": "netlify/functions",
+          "children": [
+            {
+              "type": "file",
+              "path": "netlify/functions/submit-form.js",
+              "extension": ".js",
+              "size": 345,
+              "modified": "2025-12-29T19:39:15.415Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "path": "netlify.toml",
+      "extension": ".toml",
+      "size": 191,
+      "modified": "2025-12-29T19:39:15.415Z"
+    },
+    {
+      "type": "file",
+      "path": "package-lock.json",
+      "extension": ".json",
+      "size": 111880,
+      "modified": "2025-12-29T19:39:15.908Z"
+    },
+    {
+      "type": "file",
+      "path": "package.json",
+      "extension": ".json",
+      "size": 718,
+      "modified": "2025-12-29T19:39:15.908Z"
+    },
+    {
+      "type": "directory",
+      "path": "theme",
+      "children": [
+        {
+          "type": "file",
+          "path": "theme/404.html",
+          "extension": ".html",
+          "size": 9032,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/[about-us].html",
+          "extension": ".html",
+          "size": 6623,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/[faq-registration-page].html",
+          "extension": ".html",
+          "size": 6739,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/[faq-school-page].html",
+          "extension": ".html",
+          "size": 6739,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/[registration-page-announcement].html",
+          "extension": ".html",
+          "size": 6739,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/[school-page-announcement].html",
+          "extension": ".html",
+          "size": 6739,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/[services].html",
+          "extension": ".html",
+          "size": 6623,
+          "modified": "2025-12-29T19:39:15.947Z"
+        },
+        {
+          "type": "directory",
+          "path": "theme/assets",
+          "children": [
+            {
+              "type": "directory",
+              "path": "theme/assets/css",
+              "children": [
+                {
+                  "type": "file",
+                  "path": "theme/assets/css/normalize.css",
+                  "extension": ".css",
+                  "size": 7772,
+                  "modified": "2025-12-29T19:39:15.947Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/css/search-bloom-placements.webflow.css",
+                  "extension": ".css",
+                  "size": 91417,
+                  "modified": "2025-12-29T19:39:15.947Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/css/webflow.css",
+                  "extension": ".css",
+                  "size": 38513,
+                  "modified": "2025-12-29T19:39:15.947Z"
+                }
+              ]
+            },
+            {
+              "type": "directory",
+              "path": "theme/assets/documents",
+              "children": [
+                {
+                  "type": "file",
+                  "path": "theme/assets/documents/success.lottie",
+                  "extension": ".lottie",
+                  "size": 2931,
+                  "modified": "2025-12-29T19:39:15.947Z"
+                }
+              ]
+            },
+            {
+              "type": "directory",
+              "path": "theme/assets/fonts",
+              "children": [
+                {
+                  "type": "file",
+                  "path": "theme/assets/fonts/neuehaasdisplaymediu.ttf",
+                  "extension": ".ttf",
+                  "size": 101948,
+                  "modified": "2025-12-29T19:39:15.948Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/fonts/neuehaasdisplaymediumitalic.ttf",
+                  "extension": ".ttf",
+                  "size": 109792,
+                  "modified": "2025-12-29T19:39:15.948Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/fonts/neuehaasdisplayroman.ttf",
+                  "extension": ".ttf",
+                  "size": 100400,
+                  "modified": "2025-12-29T19:39:15.949Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/fonts/neuehaasdisplayromanitalic.ttf",
+                  "extension": ".ttf",
+                  "size": 107764,
+                  "modified": "2025-12-29T19:39:15.949Z"
+                }
+              ]
+            },
+            {
+              "type": "directory",
+              "path": "theme/assets/images",
+              "children": [
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/about-us_icon.svg",
+                  "extension": ".svg",
+                  "size": 16975,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/all-elements_grain-effect-black_svg.svg",
+                  "extension": ".svg",
+                  "size": 1348,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/all-elements_grain-effect-white_svg.svg",
+                  "extension": ".svg",
+                  "size": 1347,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-services-flipped-mobile_svg-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 29918,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-services-flipped_illustration-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 29979,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-services-line-img_svg.svg",
+                  "extension": ".svg",
+                  "size": 688,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-services-mobile_svg-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 29774,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-services_illustration-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 29676,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-solution-img_svg-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 7325,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/candidate-solution_illustration.svg",
+                  "extension": ".svg",
+                  "size": 10400,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/challenge-tile-candidates_svg.svg",
+                  "extension": ".svg",
+                  "size": 53313,
+                  "modified": "2025-12-29T19:39:15.950Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/challenge-tile-end-to-end_svg.svg",
+                  "extension": ".svg",
+                  "size": 81908,
+                  "modified": "2025-12-29T19:39:15.951Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/challenge-tile-leadership_svg.svg",
+                  "extension": ".svg",
+                  "size": 69068,
+                  "modified": "2025-12-29T19:39:15.951Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/challenge-tile-mismatch_svg.svg",
+                  "extension": ".svg",
+                  "size": 65692,
+                  "modified": "2025-12-29T19:39:15.951Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io-p-1080.png",
+                  "extension": ".png",
+                  "size": 86078,
+                  "modified": "2025-12-29T19:39:15.952Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io-p-1600.png",
+                  "extension": ".png",
+                  "size": 160612,
+                  "modified": "2025-12-29T19:39:15.952Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io-p-2000.png",
+                  "extension": ".png",
+                  "size": 232305,
+                  "modified": "2025-12-29T19:39:15.953Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io-p-2600.png",
+                  "extension": ".png",
+                  "size": 362377,
+                  "modified": "2025-12-29T19:39:15.955Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io-p-500.png",
+                  "extension": ".png",
+                  "size": 27447,
+                  "modified": "2025-12-29T19:39:15.955Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io-p-800.png",
+                  "extension": ".png",
+                  "size": 55235,
+                  "modified": "2025-12-29T19:39:15.955Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway-compressify.io.png",
+                  "extension": ".png",
+                  "size": 385075,
+                  "modified": "2025-12-29T19:39:15.957Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway_mobile-view-compressify.io-p-500.png",
+                  "extension": ".png",
+                  "size": 33190,
+                  "modified": "2025-12-29T19:39:15.957Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway_mobile-view-compressify.io-p-800.png",
+                  "extension": ".png",
+                  "size": 65427,
+                  "modified": "2025-12-29T19:39:15.957Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/confused-pathway_mobile-view-compressify.io.png",
+                  "extension": ".png",
+                  "size": 197412,
+                  "modified": "2025-12-29T19:39:15.958Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/favicon.png",
+                  "extension": ".png",
+                  "size": 1062,
+                  "modified": "2025-12-29T19:39:15.958Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/footer-illustration_svg-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 841238,
+                  "modified": "2025-12-29T19:39:15.959Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/form_calendar-icon.svg",
+                  "extension": ".svg",
+                  "size": 235,
+                  "modified": "2025-12-29T19:39:15.959Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/form_chevron-down.svg",
+                  "extension": ".svg",
+                  "size": 177,
+                  "modified": "2025-12-29T19:39:15.959Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/full-page_grain-effect_svg.svg",
+                  "extension": ".svg",
+                  "size": 1347,
+                  "modified": "2025-12-29T19:39:15.959Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/grain-effect_cards-compressify.io-p-1080.png",
+                  "extension": ".png",
+                  "size": 277622,
+                  "modified": "2025-12-29T19:39:15.959Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/grain-effect_cards-compressify.io-p-500.png",
+                  "extension": ".png",
+                  "size": 55028,
+                  "modified": "2025-12-29T19:39:15.960Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/grain-effect_cards-compressify.io-p-800.png",
+                  "extension": ".png",
+                  "size": 149726,
+                  "modified": "2025-12-29T19:39:15.960Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/grain-effect_cards-compressify.io.png",
+                  "extension": ".png",
+                  "size": 503825,
+                  "modified": "2025-12-29T19:39:15.960Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/grain-effect_cards-two-percent-opacity-compressify.io.png",
+                  "extension": ".png",
+                  "size": 38821,
+                  "modified": "2025-12-29T19:39:15.961Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/icon_teacher.svg",
+                  "extension": ".svg",
+                  "size": 8987,
+                  "modified": "2025-12-29T19:39:15.961Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/illustration-keyboard_noise-svg-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 437262,
+                  "modified": "2025-12-29T19:39:15.961Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/illustration-keyboard_noise-svg.svg",
+                  "extension": ".svg",
+                  "size": 440933,
+                  "modified": "2025-12-29T19:39:15.963Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/illustration_simpler-path_green.svg",
+                  "extension": ".svg",
+                  "size": 7717,
+                  "modified": "2025-12-29T19:39:15.963Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/illustration_simpler-path_yellow.svg",
+                  "extension": ".svg",
+                  "size": 7768,
+                  "modified": "2025-12-29T19:39:15.963Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-blue.svg",
+                  "extension": ".svg",
+                  "size": 38092,
+                  "modified": "2025-12-29T19:39:15.963Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-blue_mobile.svg",
+                  "extension": ".svg",
+                  "size": 55388,
+                  "modified": "2025-12-29T19:39:15.963Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-blue_mobile_1.svg",
+                  "extension": ".svg",
+                  "size": 38349,
+                  "modified": "2025-12-29T19:39:15.963Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-green.svg",
+                  "extension": ".svg",
+                  "size": 52245,
+                  "modified": "2025-12-29T19:39:15.964Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-green_mobile.svg",
+                  "extension": ".svg",
+                  "size": 51926,
+                  "modified": "2025-12-29T19:39:15.964Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-green_mobile_1.svg",
+                  "extension": ".svg",
+                  "size": 52249,
+                  "modified": "2025-12-29T19:39:15.964Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-yellow.svg",
+                  "extension": ".svg",
+                  "size": 51386,
+                  "modified": "2025-12-29T19:39:15.964Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-yellow_mobile.svg",
+                  "extension": ".svg",
+                  "size": 52732,
+                  "modified": "2025-12-29T19:39:15.964Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-box-yellow_mobile_1.svg",
+                  "extension": ".svg",
+                  "size": 51380,
+                  "modified": "2025-12-29T19:39:15.965Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-tray.svg",
+                  "extension": ".svg",
+                  "size": 2408,
+                  "modified": "2025-12-29T19:39:15.965Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/our-advantage-tray_mobile.svg",
+                  "extension": ".svg",
+                  "size": 2413,
+                  "modified": "2025-12-29T19:39:15.965Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/registration-page_our-advantage-box-blue.svg",
+                  "extension": ".svg",
+                  "size": 55119,
+                  "modified": "2025-12-29T19:39:15.965Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/registration-page_our-advantage-box-green.svg",
+                  "extension": ".svg",
+                  "size": 52015,
+                  "modified": "2025-12-29T19:39:15.965Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/registration-page_our-advantage-box-yellow.svg",
+                  "extension": ".svg",
+                  "size": 52776,
+                  "modified": "2025-12-29T19:39:15.966Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/required-star_1required-star.png",
+                  "extension": ".png",
+                  "size": 3002,
+                  "modified": "2025-12-29T19:39:15.966Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/school-key_svg.svg",
+                  "extension": ".svg",
+                  "size": 72473,
+                  "modified": "2025-12-29T19:39:15.966Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/school-solution_illustration.svg",
+                  "extension": ".svg",
+                  "size": 2750,
+                  "modified": "2025-12-29T19:39:15.966Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/service-explanation-bg_svg.svg",
+                  "extension": ".svg",
+                  "size": 5446,
+                  "modified": "2025-12-29T19:39:15.966Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/services-illustration_svg.svg",
+                  "extension": ".svg",
+                  "size": 571398,
+                  "modified": "2025-12-29T19:39:15.968Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/solution-explanation-bg.svg",
+                  "extension": ".svg",
+                  "size": 1800,
+                  "modified": "2025-12-29T19:39:15.968Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/solution_step-box_interview-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 41154,
+                  "modified": "2025-12-29T19:39:15.969Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/solution_step-box_match-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 45151,
+                  "modified": "2025-12-29T19:39:15.969Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/solution_step-box_register-compressify.io.svg",
+                  "extension": ".svg",
+                  "size": 42203,
+                  "modified": "2025-12-29T19:39:15.969Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/solution_step-box_register-compressify.io_1.svg",
+                  "extension": ".svg",
+                  "size": 37103,
+                  "modified": "2025-12-29T19:39:15.969Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/teacher-key_svg.svg",
+                  "extension": ".svg",
+                  "size": 292140,
+                  "modified": "2025-12-29T19:39:15.970Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/the-right-match_svg.svg",
+                  "extension": ".svg",
+                  "size": 189129,
+                  "modified": "2025-12-29T19:39:15.971Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/unnoticed-job-candidate.svg",
+                  "extension": ".svg",
+                  "size": 4160,
+                  "modified": "2025-12-29T19:39:15.971Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/images/webclip.svg",
+                  "extension": ".svg",
+                  "size": 1366,
+                  "modified": "2025-12-29T19:39:15.971Z"
+                }
+              ]
+            },
+            {
+              "type": "directory",
+              "path": "theme/assets/js",
+              "children": [
+                {
+                  "type": "file",
+                  "path": "theme/assets/js/udesly-search-engine.js",
+                  "extension": ".js",
+                  "size": 18258,
+                  "modified": "2025-12-29T19:39:15.971Z"
+                },
+                {
+                  "type": "file",
+                  "path": "theme/assets/js/webflow.js",
+                  "extension": ".js",
+                  "size": 563357,
+                  "modified": "2025-12-29T19:39:15.973Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "path": "theme/candidate-registration.html",
+          "extension": ".html",
+          "size": 165389,
+          "modified": "2025-12-29T19:39:15.973Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/index.html",
+          "extension": ".html",
+          "size": 145643,
+          "modified": "2025-12-29T19:39:15.974Z"
+        },
+        {
+          "type": "directory",
+          "path": "theme/partials",
+          "children": [
+            {
+              "type": "file",
+              "path": "theme/partials/_site-css-variables.liquid",
+              "extension": ".liquid",
+              "size": 225,
+              "modified": "2025-12-29T19:39:15.974Z"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "path": "theme/privacy-policy.html",
+          "extension": ".html",
+          "size": 78529,
+          "modified": "2025-12-29T19:39:15.974Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/refund-policy.html",
+          "extension": ".html",
+          "size": 77453,
+          "modified": "2025-12-29T19:39:15.974Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/success.html",
+          "extension": ".html",
+          "size": 4341,
+          "modified": "2025-12-29T19:39:15.974Z"
+        },
+        {
+          "type": "file",
+          "path": "theme/terms-conditions.html",
+          "extension": ".html",
+          "size": 78847,
+          "modified": "2025-12-29T19:39:15.974Z"
+        }
+      ]
+    }
+  ]
+}
