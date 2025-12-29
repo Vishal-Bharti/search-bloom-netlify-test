@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>FAQ Registration Pages </title>
+    <description>FAQ Registration Pages  Feed</description>
+    <link></link>
+    <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+    <atom:link href="/faq-registration-page/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Third FAQ</title>
+            
+            <link>/faq-registration-page/third-faq/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/faq-registration-page/third-faq/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+        <item>
+            <title>Second FAQ</title>
+            
+            <link>/faq-registration-page/second-faq/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/faq-registration-page/second-faq/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+        <item>
+            <title>First FAQ</title>
+            
+            <link>/faq-registration-page/first-faq/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/faq-registration-page/first-faq/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+  </channel>
+</rss>

@@ -1,0 +1,3215 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  branch: master
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Twitter Image
+            name: twitter:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: faq_school_page
+    label: FAQ School Pages
+    folder: cms/faq-school-page
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_question-number
+        label: Question Number
+        widget: number
+        required: true
+      - hint: ''
+        name: f_question
+        label: Question
+        widget: string
+        required: true
+      - hint: ''
+        name: f_answer
+        label: Answer
+        widget: string
+        required: true
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: faq-school-page
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[faq-school-page].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: faq_registration_page
+    label: FAQ Registration Pages
+    folder: cms/faq-registration-page
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_question-number
+        label: Question Number
+        widget: number
+        required: true
+      - hint: ''
+        name: f_question
+        label: Question
+        widget: string
+        required: true
+      - hint: ''
+        name: f_answer
+        label: Answer
+        widget: string
+        required: true
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: faq-registration-page
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[faq-registration-page].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: school_page_announcement
+    label: Home Page Announcements
+    folder: cms/school-page-announcement
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: Type your announcement here. Keep it short and sweet.
+        name: title
+        label: Announcement
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: Switch this on to show the announcement banner on the homepage.
+        name: f_show-hide
+        label: Show / Hide
+        widget: boolean
+        required: false
+        default: false
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: school-page-announcement
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[school-page-announcement].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: registration_page_announcement
+    label: Registration Page Announcements
+    folder: cms/registration-page-announcement
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: Type your announcement here. Keep it short and sweet.
+        name: title
+        label: Announcement
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: >-
+          Switch this ON to show the announcement banner on the registration
+          page
+        name: f_show-hide
+        label: Show / Hide
+        widget: boolean
+        required: false
+        default: false
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: registration-page-announcement
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[registration-page-announcement].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: about_us
+    label: About Us
+    folder: cms/about-us
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: Type the Team Member's name here
+        name: title
+        label: Team Member Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: About the team member
+        name: body
+        widget: markdown
+        required: false
+      - hint: Enter the designation of the team member
+        name: f_designation-of-the-team-member
+        label: Designation of the team member
+        widget: string
+        required: true
+      - hint: >-
+          List out the top skills of the founder here. It can be in a paragraph
+          or list. Make sure it does not exceed the character limit.
+        name: f_skills-of-the-founder
+        label: Top skills of the team member
+        widget: markdown
+        required: true
+      - hint: Enter the company name here
+        name: f_company-name
+        label: Company name
+        widget: string
+        required: true
+      - hint: >-
+          List out the reaons, the founder has started the company. It can be in
+          paragraph or list. Make sure it does not exceed the character limit
+        name: f_vision-behind-the-company
+        label: Vision behind the company
+        widget: markdown
+        required: true
+      - hint: Upload an image or icon representing the team member for the home page
+        name: f_profile-image-team-member-icon
+        label: Profile Image / Team Member Icon for Home Page
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: >-
+          Upload an image or icon representing the team member for the
+          registration page
+        name: f_profile-image-team-member-icon-for-registration-page
+        label: Profile Image / Team Member Icon for Registration Page
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: about-us
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[about-us].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: services
+    label: Services
+    folder: cms/services
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: Describe the service in detail
+        name: f_description
+        label: Description
+        widget: string
+        required: false
+      - hint: Upload an icon related to the service
+        name: f_service-icon-appears-by-default-on-card
+        label: Service Icon (appears by default on card)
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: Upload an icon related to the service
+        name: f_service-icon-appears-after-hovering-over-card
+        label: Service Icon (appears after hovering over card)
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: >-
+          This number will determine the position of the service card. Ex: '1'
+          will place it at top and '5' will place it at the bottom of the
+          collection.
+        name: f_order
+        label: Order
+        widget: number
+        required: true
+      - hint: >-
+          To ensure footer-links navigate to the right service box, add the
+          exact link here. Format : <domain address>/#<slug>
+        name: f_anchor-link
+        label: Anchor Link
+        widget: string
+        required: true
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: services
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[services].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: "Original text: +91\_\_9980043752, key: 48294c20"
+            label: Text
+            name: 48294c20
+            widget: string
+          - hint: 'Original text: info@searchbloomplacements.com, key: -4221d536'
+            label: Text
+            name: '-4221d536'
+            widget: string
+          - hint: 'Original text: Home , key: 42ab701'
+            label: Text
+            name: 42ab701
+            widget: string
+          - hint: 'Original text: Registration , key: 70985e67'
+            label: Text
+            name: '70985e67'
+            widget: string
+          - hint: 'Original text: Services, key: 560f747e'
+            label: Text
+            name: 560f747e
+            widget: string
+          - hint: 'Original text: FAQ, key: 10ef6'
+            label: Text
+            name: 10ef6
+            widget: string
+          - hint: 'Original text: Register as an Educator, key: -d9d26fb'
+            label: Text
+            name: '-d9d26fb'
+            widget: string
+          - hint: 'Original text: Submit your requirement, key: -7175f142'
+            label: Text
+            name: '-7175f142'
+            widget: string
+          - hint: 'Original text: Want a placement service that , key: 6ccd8f84'
+            label: Text
+            name: 6ccd8f84
+            widget: string
+          - hint: 'Original text: respects, key: -144da093'
+            label: Text
+            name: '-144da093'
+            widget: string
+          - hint: 'Original text:  your school’s vision?, key: -aed6eae'
+            label: Text
+            name: '-aed6eae'
+            widget: string
+          - hint: >-
+              Original text: We match committed educators, support staff, and
+              school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools.
+              Carefully screened, culture-fit tested, and ready to join your
+              school., key: 6c7451c2
+            label: Text
+            name: 6c7451c2
+            widget: text
+          - hint: 'Original text: submit your requirment - It''s Free, key: b7c66e5'
+            label: Text
+            name: b7c66e5
+            widget: string
+          - hint: 'Original text: We help you , key: 2ea70eae'
+            label: Text
+            name: 2ea70eae
+            widget: string
+          - hint: 'Original text: Untangle, key: 42dfcd8'
+            label: Text
+            name: 42dfcd8
+            widget: string
+          - hint: 'Original text:  your recruitment process, key: 7f91309e'
+            label: Text
+            name: 7f91309e
+            widget: string
+          - hint: 'Original text: 1, key: 31'
+            label: Text
+            name: '31'
+            widget: string
+          - hint: 'Original text: Endless resumes, key: 317a29a'
+            label: Text
+            name: 317a29a
+            widget: string
+          - hint: >-
+              Original text: but none that truly fit your school’s values., key:
+              4b2af78c
+            label: Text
+            name: 4b2af78c
+            widget: string
+          - hint: 'Original text: 2, key: 32'
+            label: Text
+            name: '32'
+            widget: string
+          - hint: 'Original text: Last-minute resignations, key: 49731383'
+            label: Text
+            name: '49731383'
+            widget: string
+          - hint: 'Original text: leading to derailed academic plans., key: -69c99886'
+            label: Text
+            name: '-69c99886'
+            widget: string
+          - hint: 'Original text: Inability to find professionals, key: -7eebf6d1'
+            label: Text
+            name: '-7eebf6d1'
+            widget: string
+          - hint: 'Original text: who can match your school’s vision, key: 8165eda'
+            label: Text
+            name: 8165eda
+            widget: string
+          - hint: 'Original text: 3, key: 33'
+            label: Text
+            name: '33'
+            widget: string
+          - hint: 'Original text: Losing valuable admin time, key: -579596de'
+            label: Text
+            name: '-579596de'
+            widget: string
+          - hint: >-
+              Original text: due to cumbersome recruitment processes, key:
+              287bfa
+            label: Text
+            name: 287bfa
+            widget: string
+          - hint: 'Original text: 4, key: 34'
+            label: Text
+            name: '34'
+            widget: string
+          - hint: >-
+              Original text: If this reflects your journey, you’re in the , key:
+              23ed48e9
+            label: Text
+            name: 23ed48e9
+            widget: string
+          - hint: 'Original text: right place., key: 7850968b'
+            label: Text
+            name: 7850968b
+            widget: string
+          - hint: >-
+              Original text: We will guide you through this entire process to
+              ensure that you find the right educators that match your school’s
+              vision., key: 52fba094
+            label: Text
+            name: 52fba094
+            widget: text
+          - hint: 'Original text: You tell us your needs, key: 18f6eac4'
+            label: Text
+            name: 18f6eac4
+            widget: string
+          - hint: >-
+              Original text: Complete a short requirement form. No charges
+              apply., key: 15398f23
+            label: Text
+            name: 15398f23
+            widget: string
+          - hint: 'Original text: We match & shortlist, key: 54f7f913'
+            label: Text
+            name: 54f7f913
+            widget: string
+          - hint: >-
+              Original text: Each candidate is interviewed, and
+              reference-checked., key: 6e31044c
+            label: Text
+            name: 6e31044c
+            widget: string
+          - hint: 'Original text: You decide, key: -1b82557'
+            label: Text
+            name: '-1b82557'
+            widget: string
+          - hint: >-
+              Original text: Schools receive curated profiles for whom they can
+              schedule interviews., key: -55d1b875
+            label: Text
+            name: '-55d1b875'
+            widget: string
+          - hint: 'Original text: submit your requirment, key: 48f0da63'
+            label: Text
+            name: 48f0da63
+            widget: string
+          - hint: >-
+              Original text: Schools are not charged for placements. Our process
+              is designed to save you time and reduce hiring risk., key:
+              -1fffb800
+            label: Text
+            name: '-1fffb800'
+            widget: text
+          - hint: 'Original text: As , key: 1020e'
+            label: Text
+            name: 1020e
+            widget: string
+          - hint: 'Original text: former school leaders and educators,, key: -8fb8968'
+            label: Text
+            name: '-8fb8968'
+            widget: string
+          - hint: >-
+              Original text:  we’ve been pulled into last-minute recruitment
+              drives and watched culture mismatch cost months of learning.
+              That’s why we prioritise , key: 9d7f19
+            label: Text
+            name: 9d7f19
+            widget: text
+          - hint: 'Original text: fit over volume, key: -2e4c9da9'
+            label: Text
+            name: '-2e4c9da9'
+            widget: string
+          - hint: >-
+              Original text: , because long-term learning needs trustworthy
+              people, , key: -7bc8556c
+            label: Text
+            name: '-7bc8556c'
+            widget: string
+          - hint: 'Original text: not quick fixes., key: -3dd63535'
+            label: Text
+            name: '-3dd63535'
+            widget: string
+          - hint: 'Original text: Let us help you find the , key: -3f95f92d'
+            label: Text
+            name: '-3f95f92d'
+            widget: string
+          - hint: 'Original text: Right Educators, key: -15f0b6b4'
+            label: Text
+            name: '-15f0b6b4'
+            widget: string
+          - hint: >-
+              Original text: Fill out the form below to share your school’s
+              requirements. Once submitted, our team will reach out to
+              understand your needs better and begin shortlisting suitable
+              candidates — at no cost to your school., key: 11b42821
+            label: Text
+            name: 11b42821
+            widget: text
+          - hint: 'Original text: 01., key: ba4d'
+            label: Text
+            name: ba4d
+            widget: string
+          - hint: 'Original text: School Information, key: -1c37ad80'
+            label: Text
+            name: '-1c37ad80'
+            widget: string
+          - hint: 'Original text: 02., key: ba6c'
+            label: Text
+            name: ba6c
+            widget: string
+          - hint: 'Original text: Contact Details, key: 3aaae202'
+            label: Text
+            name: 3aaae202
+            widget: string
+          - hint: 'Original text: 03., key: ba8b'
+            label: Text
+            name: ba8b
+            widget: string
+          - hint: 'Original text: Transport Facility, key: 4f7075fa'
+            label: Text
+            name: 4f7075fa
+            widget: string
+          - hint: 'Original text: 04., key: baaa'
+            label: Text
+            name: baaa
+            widget: string
+          - hint: 'Original text: Recruitment Needs, key: 236216d9'
+            label: Text
+            name: 236216d9
+            widget: string
+          - hint: 'Original text: Contact Us, key: 7f2746de'
+            label: Text
+            name: 7f2746de
+            widget: string
+          - hint: >-
+              Original text: Please tell us a bit about your school., key:
+              -2c0eacc5
+            label: Text
+            name: '-2c0eacc5'
+            widget: string
+          - hint: 'Original text: ❗Scroll Down to fill required fields, key: -dd01d80'
+            label: Text
+            name: '-dd01d80'
+            widget: string
+          - hint: 'Original text: Name of School, key: -63495538'
+            label: Text
+            name: '-63495538'
+            widget: string
+          - hint: 'Original text: ❗Please fill required field, key: 49fa24f7'
+            label: Text
+            name: 49fa24f7
+            widget: string
+          - hint: 'Original text: Affiliation Board, key: 7fc8e176'
+            label: Text
+            name: 7fc8e176
+            widget: string
+          - hint: >-
+              Original text: State / CISCE / CBSE / IGCSE / IB / Other, key:
+              -55612430
+            label: Text
+            name: '-55612430'
+            widget: string
+          - hint: 'Original text: State Board, key: 50aa0e57'
+            label: Text
+            name: 50aa0e57
+            widget: string
+          - hint: 'Original text: CISCE Board, key: 5f69d135'
+            label: Text
+            name: 5f69d135
+            widget: string
+          - hint: 'Original text: CBSE Board, key: 535dd0d7'
+            label: Text
+            name: 535dd0d7
+            widget: string
+          - hint: 'Original text: IGCSE Board, key: 2dfefd5d'
+            label: Text
+            name: 2dfefd5d
+            widget: string
+          - hint: 'Original text: IB Board, key: 7d0224ff'
+            label: Text
+            name: 7d0224ff
+            widget: string
+          - hint: 'Original text: Year of establishment, key: -3115770f'
+            label: Text
+            name: '-3115770f'
+            widget: string
+          - hint: 'Original text: Type of School, key: 5b46f0b7'
+            label: Text
+            name: 5b46f0b7
+            widget: string
+          - hint: 'Original text: Boys, key: 1fb047'
+            label: Text
+            name: 1fb047
+            widget: string
+          - hint: 'Original text: Girls, key: 419f937'
+            label: Text
+            name: 419f937
+            widget: string
+          - hint: 'Original text: Co-ed, key: 3e35180'
+            label: Text
+            name: '3e35180'
+            widget: string
+          - hint: 'Original text: ❗Please select atleast , key: -39e6bc91'
+            label: Text
+            name: '-39e6bc91'
+            widget: string
+          - hint: 'Original text: ONE, key: 13246'
+            label: Text
+            name: '13246'
+            widget: string
+          - hint: "Original text: \_option, key: -2c506eeb"
+            label: Text
+            name: '-2c506eeb'
+            widget: string
+          - hint: 'Original text: Classes Offered, key: -7c0e623f'
+            label: Text
+            name: '-7c0e623f'
+            widget: string
+          - hint: 'Original text: Medium of Instruction, key: -559f2c70'
+            label: Text
+            name: '-559f2c70'
+            widget: string
+          - hint: 'Original text: ❗Scroll Up to fill required fields, key: 4e32f079'
+            label: Text
+            name: 4e32f079
+            widget: string
+          - hint: 'Original text: Prev, key: 261653'
+            label: Text
+            name: '261653'
+            widget: string
+          - hint: 'Original text: NEXT, key: 2482f3'
+            label: Text
+            name: 2482f3
+            widget: string
+          - hint: >-
+              Original text: Please share your contact details to help us get in
+              touch with you, key: 304b4683
+            label: Text
+            name: 304b4683
+            widget: string
+          - hint: 'Original text: Contact Name, key: 526da2cb'
+            label: Text
+            name: 526da2cb
+            widget: string
+          - hint: 'Original text: Designation, key: 2db687d7'
+            label: Text
+            name: 2db687d7
+            widget: string
+          - hint: 'Original text: Contact Number, key: 6ea9f389'
+            label: Text
+            name: 6ea9f389
+            widget: string
+          - hint: >-
+              Original text: ❗Please enter a valid contact number, key:
+              -426d49cd
+            label: Text
+            name: '-426d49cd'
+            widget: string
+          - hint: 'Original text: School Email ID, key: e14834b'
+            label: Text
+            name: e14834b
+            widget: string
+          - hint: 'Original text: ❗Please enter a valid email ID, key: 45fab289'
+            label: Text
+            name: 45fab289
+            widget: string
+          - hint: 'Original text: School Website, key: 47f787ef'
+            label: Text
+            name: 47f787ef
+            widget: string
+          - hint: >-
+              Original text: Please help us answer a commonly asked question by
+              teachers & school staff, key: 4ed9ed86
+            label: Text
+            name: 4ed9ed86
+            widget: string
+          - hint: 'Original text: Do you have transport facility for , key: -3b497265'
+            label: Text
+            name: '-3b497265'
+            widget: string
+          - hint: 'Original text: STAFF, key: 4b8cac0'
+            label: Text
+            name: 4b8cac0
+            widget: string
+          - hint: 'Original text: ?, key: 3f'
+            label: Text
+            name: 3f
+            widget: string
+          - hint: 'Original text: Yes, key: 15ac7'
+            label: Text
+            name: 15ac7
+            widget: string
+          - hint: 'Original text: No, key: 9e1'
+            label: Text
+            name: '9e1'
+            widget: string
+          - hint: 'Original text: Is transport free or charged for , key: -c3ea203'
+            label: Text
+            name: '-c3ea203'
+            widget: string
+          - hint: 'Original text: FREE, key: 210e6c'
+            label: Text
+            name: 210e6c
+            widget: string
+          - hint: 'Original text: Fee Applicable , key: 7e6b5e87'
+            label: Text
+            name: 7e6b5e87
+            widget: string
+          - hint: >-
+              Original text: Please tell us more about the teachers / staff you
+              need., key: 484e62bb
+            label: Text
+            name: 484e62bb
+            widget: string
+          - hint: 'Original text: Which , key: -659f9a3d'
+            label: Text
+            name: '-659f9a3d'
+            widget: string
+          - hint: 'Original text: Class, key: 3e2b958'
+            label: Text
+            name: 3e2b958
+            widget: string
+          - hint: 'Original text:  is the teacher required for?, key: -700dfd0c'
+            label: Text
+            name: '-700dfd0c'
+            widget: string
+          - hint: 'Original text: Subject, key: -c1d12f4'
+            label: Text
+            name: '-c1d12f4'
+            widget: string
+          - hint: >-
+              Original text: Please explain your requirement in more detail,
+              key: c2bc14c
+            label: Text
+            name: c2bc14c
+            widget: string
+          - hint: 'Original text: Thank you for registering with us!, key: -1dd6ab08'
+            label: Text
+            name: '-1dd6ab08'
+            widget: string
+          - hint: 'Original text: Our team will contact you soon., key: 38994073'
+            label: Text
+            name: '38994073'
+            widget: string
+          - hint: 'Original text: submit another requirement, key: -6759cd62'
+            label: Text
+            name: '-6759cd62'
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: >-
+              Original text: Please refresh the page and try again., key:
+              -4a9a361d
+            label: Text
+            name: '-4a9a361d'
+            widget: string
+          - hint: 'Original text: Fit, key: 113f1'
+            label: Text
+            name: 113f1
+            widget: string
+          - hint: 'Original text:  over volume, key: 4cf067c6'
+            label: Text
+            name: 4cf067c6
+            widget: string
+          - hint: >-
+              Original text: Our services are built taking into consideration
+              your long-term learning needs., key: -9fba399
+            label: Text
+            name: '-9fba399'
+            widget: string
+          - hint: 'Original text: Guided by Experience. , key: -78387933'
+            label: Text
+            name: '-78387933'
+            widget: string
+          - hint: 'Original text: Driven by , key: -66123333'
+            label: Text
+            name: '-66123333'
+            widget: string
+          - hint: 'Original text: Purpose., key: 6c7e0af0'
+            label: Text
+            name: 6c7e0af0
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: Ready to , key: 365cbce8'
+            label: Text
+            name: 365cbce8
+            widget: string
+          - hint: 'Original text: simplify, key: 1cf2a909'
+            label: Text
+            name: 1cf2a909
+            widget: string
+          - hint: 'Original text:  your teacher recruitment process?, key: -bb49421'
+            label: Text
+            name: '-bb49421'
+            widget: string
+          - hint: >-
+              Original text: Let us handle the hiring so you can focus on the
+              teaching and learning process., key: -3c2698a3
+            label: Text
+            name: '-3c2698a3'
+            widget: string
+          - hint: 'Original text: We understand , key: 164039b0'
+            label: Text
+            name: 164039b0
+            widget: string
+          - hint: 'Original text: the gap, key: -5095c559'
+            label: Text
+            name: '-5095c559'
+            widget: string
+          - hint: >-
+              Original text:  between the school you aspire to build, key:
+              -269f8f1b
+            label: Text
+            name: '-269f8f1b'
+            widget: string
+          - hint: 'Original text: and the , key: -3c22ad88'
+            label: Text
+            name: '-3c22ad88'
+            widget: string
+          - hint: 'Original text: professionals , key: -3386418c'
+            label: Text
+            name: '-3386418c'
+            widget: string
+          - hint: 'Original text: you struggle to find., key: -53796a0e'
+            label: Text
+            name: '-53796a0e'
+            widget: string
+          - hint: 'Original text: The , key: 27c1ef'
+            label: Text
+            name: 27c1ef
+            widget: string
+          - hint: 'Original text: Search Bloom, key: -48d33a75'
+            label: Text
+            name: '-48d33a75'
+            widget: string
+          - hint: 'Original text:  advantage., key: -398dea7d'
+            label: Text
+            name: '-398dea7d'
+            widget: string
+          - hint: >-
+              Original text: With Search Bloom Placements, you build stable,
+              aligned teaching teams without delays or hiring fatigue., key:
+              -5be11a31
+            label: Text
+            name: '-5be11a31'
+            widget: text
+          - hint: 'Original text: A few , key: 70ddd807'
+            label: Text
+            name: 70ddd807
+            widget: string
+          - hint: 'Original text: common questions , key: -1996ba38'
+            label: Text
+            name: '-1996ba38'
+            widget: string
+          - hint: 'Original text: you may have., key: 6272628a'
+            label: Text
+            name: 6272628a
+            widget: string
+          - hint: 'Original text: Contact Us for more details, key: -acef890'
+            label: Text
+            name: '-acef890'
+            widget: string
+          - hint: >-
+              Original text: Feel free to contact us anytime to clear up your
+              doubts., key: 43b48a75
+            label: Text
+            name: 43b48a75
+            widget: string
+          - hint: 'Original text: Are you an educator looking for a , key: 75bfd90a'
+            label: Text
+            name: 75bfd90a
+            widget: string
+          - hint: 'Original text: better, key: -52ff5210'
+            label: Text
+            name: '-52ff5210'
+            widget: string
+          - hint: 'Original text:  opportunity?, key: 7cc2c3ec'
+            label: Text
+            name: 7cc2c3ec
+            widget: string
+          - hint: >-
+              Original text: Let us help you find a role where your passion,
+              skill, and potential truly shine., key: 3754ad1
+            label: Text
+            name: 3754ad1
+            widget: string
+          - hint: 'Original text: Register with uS today, key: -28cbb164'
+            label: Text
+            name: '-28cbb164'
+            widget: string
+          - hint: 'Original text: Services Offered to schools, key: 5bddb321'
+            label: Text
+            name: 5bddb321
+            widget: string
+          - hint: >-
+              Original text: Services Offered to Teachers / Staff, key:
+              -27af3202
+            label: Text
+            name: '-27af3202'
+            widget: string
+          - hint: 'Original text: Personalised Career Guidance, key: 46f18943'
+            label: Text
+            name: 46f18943
+            widget: string
+          - hint: 'Original text: Resume & Interview Assistance, key: 42538464'
+            label: Text
+            name: '42538464'
+            widget: string
+          - hint: 'Original text: Ongoing Career Support, key: -6dc86f6e'
+            label: Text
+            name: '-6dc86f6e'
+            widget: string
+          - hint: 'Original text: Pages, key: 494ffa4'
+            label: Text
+            name: 494ffa4
+            widget: string
+          - hint: 'Original text: Home Page, key: -dd4dad0'
+            label: Text
+            name: '-dd4dad0'
+            widget: string
+          - hint: 'Original text: Registration Page, key: -68f5566a'
+            label: Text
+            name: '-68f5566a'
+            widget: string
+          - hint: 'Original text: Follow Us, key: -5ae80293'
+            label: Text
+            name: '-5ae80293'
+            widget: string
+          - hint: "Original text: Terms &\_Conditions, key: -3e157255"
+            label: Text
+            name: '-3e157255'
+            widget: string
+          - hint: 'Original text: Privacy Policy, key: -3fbde6f6'
+            label: Text
+            name: '-3fbde6f6'
+            widget: string
+          - hint: 'Original text: Refund Policy, key: -234a8d26'
+            label: Text
+            name: '-234a8d26'
+            widget: string
+          - hint: >-
+              Original text: Copyright © 2025 Search Bloom Placements., key:
+              -6590eae6
+            label: Text
+            name: '-6590eae6'
+            widget: string
+          - hint: 'Original text: Designed and developed by , key: -6bb908a7'
+            label: Text
+            name: '-6bb908a7'
+            widget: string
+          - hint: 'Original text: Figmaestro., key: -76ce073d'
+            label: Text
+            name: '-76ce073d'
+            widget: string
+          - hint: 'Original text: Submit school requirement, key: 3e97c67f'
+            label: Text
+            name: 3e97c67f
+            widget: string
+          - hint: 'Original text: Register as an educator, key: -11778b1b'
+            label: Text
+            name: '-11778b1b'
+            widget: string
+          - hint: 'Original text: Are you looking for a , key: 5c2f0400'
+            label: Text
+            name: 5c2f0400
+            widget: string
+          - hint: 'Original text: better , key: -ceaefd0'
+            label: Text
+            name: '-ceaefd0'
+            widget: string
+          - hint: 'Original text: opportunity in the education sector?, key: -9e2a0dc'
+            label: Text
+            name: '-9e2a0dc'
+            widget: string
+          - hint: >-
+              Original text: As former educators & administrators, we understand
+              how discouraging it can be when your talent goes unnoticed. That’s
+              why we started this service to make job hunting less stressful.,
+              key: -e1979ee
+            label: Text
+            name: '-e1979ee'
+            widget: text
+          - hint: 'Original text: Start your Journey Today, key: -2946f5ee'
+            label: Text
+            name: '-2946f5ee'
+            widget: string
+          - hint: >-
+              Original text: We understand how demotivating it can be when your
+              talent goes , key: 73a20b84
+            label: Text
+            name: 73a20b84
+            widget: string
+          - hint: 'Original text: unnoticed., key: -468a4d45'
+            label: Text
+            name: '-468a4d45'
+            widget: string
+          - hint: 'Original text: Applying to schools but , key: -4590eb07'
+            label: Text
+            name: '-4590eb07'
+            widget: string
+          - hint: 'Original text: rarely receiving updates., key: -2558a40b'
+            label: Text
+            name: '-2558a40b'
+            widget: string
+          - hint: 'Original text: Lack of guidance and support, key: -4ff6a5fc'
+            label: Text
+            name: '-4ff6a5fc'
+            widget: string
+          - hint: 'Original text:  during job search., key: 6a4bcae4'
+            label: Text
+            name: 6a4bcae4
+            widget: string
+          - hint: 'Original text: Great experience, but , key: 584d8870'
+            label: Text
+            name: 584d8870
+            widget: string
+          - hint: >-
+              Original text: not enough visibility or recognition., key:
+              -5fb07ff7
+            label: Text
+            name: '-5fb07ff7'
+            widget: string
+          - hint: 'Original text: Unclear interview processes, key: -16b14b6e'
+            label: Text
+            name: '-16b14b6e'
+            widget: string
+          - hint: 'Original text:  and confusing requirements., key: 7a4d81f5'
+            label: Text
+            name: 7a4d81f5
+            widget: string
+          - hint: 'Original text: Start your journey today, key: -572335ae'
+            label: Text
+            name: '-572335ae'
+            widget: string
+          - hint: >-
+              Original text: If this sounds like you, then you are in the , key:
+              80ec3c1
+            label: Text
+            name: 80ec3c1
+            widget: string
+          - hint: "Original text: \_Whether you’re just beginning your journey or looking for a meaningful change, we guide you every step of the way., key: 607a290d"
+            label: Text
+            name: 607a290d
+            widget: text
+          - hint: >-
+              Original text: As former educators & administrators, we understand
+              how discouraging it can be when your talent goes unnoticed. That’s
+              why we started this service to , key: -214fdf94
+            label: Text
+            name: '-214fdf94'
+            widget: text
+          - hint: 'Original text: make job hunting less stressful., key: -3b4cea5a'
+            label: Text
+            name: '-3b4cea5a'
+            widget: string
+          - hint: >-
+              Original text: Whether you teach, manage, or lead, our mission is
+              to connect you with a school that , key: -7f66a79f
+            label: Text
+            name: '-7f66a79f'
+            widget: string
+          - hint: 'Original text: truly values, key: -7e1eb4c2'
+            label: Text
+            name: '-7e1eb4c2'
+            widget: string
+          - hint: 'Original text:  your talent and commitment., key: 4a44a229'
+            label: Text
+            name: 4a44a229
+            widget: string
+          - hint: 'Original text: Start your JouRney Today, key: 4d8ae632'
+            label: Text
+            name: 4d8ae632
+            widget: string
+          - hint: 'Original text: Right School., key: -4ba6a30a'
+            label: Text
+            name: '-4ba6a30a'
+            widget: string
+          - hint: >-
+              Original text: Fill in your details to help us understand your
+              background, experience, and aspirations. Once registered, our
+              placement team will contact you to schedule an interview and begin
+              our recruitment process., key: -6e10aea3
+            label: Text
+            name: '-6e10aea3'
+            widget: text
+          - hint: 'Original text: Personal Information, key: -46233cb4'
+            label: Text
+            name: '-46233cb4'
+            widget: string
+          - hint: 'Original text: Qualifications, key: 35bbec84'
+            label: Text
+            name: 35bbec84
+            widget: string
+          - hint: 'Original text: Work Experience, key: -b5ce627'
+            label: Text
+            name: '-b5ce627'
+            widget: string
+          - hint: 'Original text: 05., key: bac9'
+            label: Text
+            name: bac9
+            widget: string
+          - hint: 'Original text: Certificates & Training, key: -47a1d788'
+            label: Text
+            name: '-47a1d788'
+            widget: string
+          - hint: 'Original text: 06., key: bae8'
+            label: Text
+            name: bae8
+            widget: string
+          - hint: "Original text: Skills &\_Proficiencies, key: -40897b05"
+            label: Text
+            name: '-40897b05'
+            widget: string
+          - hint: 'Original text: 07., key: bb07'
+            label: Text
+            name: bb07
+            widget: string
+          - hint: 'Original text: References, key: -36a17958'
+            label: Text
+            name: '-36a17958'
+            widget: string
+          - hint: 'Original text: 08., key: bb26'
+            label: Text
+            name: bb26
+            widget: string
+          - hint: 'Original text: Additonal Information, key: -60c99e5e'
+            label: Text
+            name: '-60c99e5e'
+            widget: string
+          - hint: 'Original text: 09., key: bb45'
+            label: Text
+            name: bb45
+            widget: string
+          - hint: 'Original text: Declaration, key: -157ee2a6'
+            label: Text
+            name: '-157ee2a6'
+            widget: string
+          - hint: 'Original text: Please tell us a bit about you., key: -5c2bab23'
+            label: Text
+            name: '-5c2bab23'
+            widget: string
+          - hint: 'Original text: Full Name, key: ff41d7c'
+            label: Text
+            name: ff41d7c
+            widget: string
+          - hint: 'Original text: Date of Birth, key: -ed72d8'
+            label: Text
+            name: '-ed72d8'
+            widget: string
+          - hint: 'Original text: Gender, key: 7eeadee1'
+            label: Text
+            name: 7eeadee1
+            widget: string
+          - hint: 'Original text: Male, key: 247a2d'
+            label: Text
+            name: 247a2d
+            widget: string
+          - hint: 'Original text: Female, key: 7d35876c'
+            label: Text
+            name: 7d35876c
+            widget: string
+          - hint: 'Original text: Nationality, key: 68f2659c'
+            label: Text
+            name: 68f2659c
+            widget: string
+          - hint: 'Original text: Select your country, key: 3e241d2d'
+            label: Text
+            name: 3e241d2d
+            widget: string
+          - hint: 'Original text: Email ID, key: 3137a43f'
+            label: Text
+            name: 3137a43f
+            widget: string
+          - hint: 'Original text: Permanent Address, key: 1081d642'
+            label: Text
+            name: 1081d642
+            widget: string
+          - hint: 'Original text: State, key: 4c7d471'
+            label: Text
+            name: 4c7d471
+            widget: string
+          - hint: 'Original text: Select your state, key: -7995fc18'
+            label: Text
+            name: '-7995fc18'
+            widget: string
+          - hint: 'Original text: City, key: 200d8b'
+            label: Text
+            name: 200d8b
+            widget: string
+          - hint: 'Original text: Select your city / town, key: 7d67b24f'
+            label: Text
+            name: 7d67b24f
+            widget: string
+          - hint: 'Original text: Postal Code, key: -1a7efbde'
+            label: Text
+            name: '-1a7efbde'
+            widget: string
+          - hint: 'Original text: Educational Qualifications, key: 7e516691'
+            label: Text
+            name: '7e516691'
+            widget: string
+          - hint: "Original text: Please add atleast one education \_qualification, key: -5bb36180"
+            label: Text
+            name: '-5bb36180'
+            widget: string
+          - hint: 'Original text: Delete, key: 79cb71cb'
+            label: Text
+            name: 79cb71cb
+            widget: string
+          - hint: 'Original text: Qualification, key: 9fdcdcf'
+            label: Text
+            name: 9fdcdcf
+            widget: string
+          - hint: 'Original text: Specialization, key: -13064255'
+            label: Text
+            name: '-13064255'
+            widget: string
+          - hint: 'Original text: Institution, key: -676cb268'
+            label: Text
+            name: '-676cb268'
+            widget: string
+          - hint: 'Original text: Year of Completion, key: 502d9762'
+            label: Text
+            name: 502d9762
+            widget: string
+          - hint: 'Original text: Grade / Percentage, key: 350a0514'
+            label: Text
+            name: 350a0514
+            widget: string
+          - hint: 'Original text: CGPA (India), key: e2d2c4f'
+            label: Text
+            name: e2d2c4f
+            widget: string
+          - hint: 'Original text: Percentage, key: 3fdfceba'
+            label: Text
+            name: 3fdfceba
+            widget: string
+          - hint: 'Original text: GPA, key: 11478'
+            label: Text
+            name: '11478'
+            widget: string
+          - hint: 'Original text: Add More, key: -4958384c'
+            label: Text
+            name: '-4958384c'
+            widget: string
+          - hint: >-
+              Original text: Please add atleast one work experience, key:
+              6dbca000
+            label: Text
+            name: 6dbca000
+            widget: string
+          - hint: 'Original text: Total Work experience, key: -a71e343'
+            label: Text
+            name: '-a71e343'
+            widget: string
+          - hint: 'Original text: Year(s), key: 15ef6ec1'
+            label: Text
+            name: 15ef6ec1
+            widget: string
+          - hint: 'Original text: Month(s), key: -f2a2a22'
+            label: Text
+            name: '-f2a2a22'
+            widget: string
+          - hint: 'Original text: Current / Previous School, key: -1a39743b'
+            label: Text
+            name: '-1a39743b'
+            widget: string
+          - hint: 'Original text: Subjects Taught, key: 1bae6c84'
+            label: Text
+            name: 1bae6c84
+            widget: string
+          - hint: 'Original text: Grades Taught, key: -3a628bd1'
+            label: Text
+            name: '-3a628bd1'
+            widget: string
+          - hint: 'Original text: Duration Worked, key: 70a637c'
+            label: Text
+            name: 70a637c
+            widget: string
+          - hint: "Original text: Certificates &\_Training, key: -256a5708"
+            label: Text
+            name: '-256a5708'
+            widget: string
+          - hint: >-
+              Original text: Please add any certification you might have done
+              (Not Mandatory), key: -3f470c5a
+            label: Text
+            name: '-3f470c5a'
+            widget: string
+          - hint: 'Original text: Certification / Training Name, key: 3556005a'
+            label: Text
+            name: 3556005a
+            widget: string
+          - hint: 'Original text: Institute / Training Center, key: -1d821101'
+            label: Text
+            name: '-1d821101'
+            widget: string
+          - hint: >-
+              Original text: Select the skills & proficiencies you are good at,
+              key: 2f161197
+            label: Text
+            name: 2f161197
+            widget: string
+          - hint: 'Original text: Classroom Management, key: -4435ef90'
+            label: Text
+            name: '-4435ef90'
+            widget: string
+          - hint: 'Original text: Differentiated Instruction, key: 299940d0'
+            label: Text
+            name: 299940d0
+            widget: string
+          - hint: 'Original text: Curriculum Design, key: -35b86ebd'
+            label: Text
+            name: '-35b86ebd'
+            widget: string
+          - hint: 'Original text: Technology Integration in Education, key: 544a8dad'
+            label: Text
+            name: 544a8dad
+            widget: string
+          - hint: 'Original text: Other Skills, key: 70d9792'
+            label: Text
+            name: 70d9792
+            widget: string
+          - hint: >-
+              Original text: Please provide two references we can get in touch
+              with., key: -53d192d7
+            label: Text
+            name: '-53d192d7'
+            widget: string
+          - hint: 'Original text: Reference Name 01, key: -4a02d45f'
+            label: Text
+            name: '-4a02d45f'
+            widget: string
+          - hint: 'Original text: Reference Name 02, key: -4a02d45e'
+            label: Text
+            name: '-4a02d45e'
+            widget: string
+          - hint: 'Original text: Additional Information, key: 7f606ab3'
+            label: Text
+            name: 7f606ab3
+            widget: string
+          - hint: 'Original text: Preferred Location, key: dcc14b4'
+            label: Text
+            name: dcc14b4
+            widget: string
+          - hint: 'Original text: Availability to Join, key: 780c622a'
+            label: Text
+            name: 780c622a
+            widget: string
+          - hint: 'Original text: Please select your notice period, key: 744207ea'
+            label: Text
+            name: 744207ea
+            widget: string
+          - hint: 'Original text: Immediate (no notice period), key: -1c4040ba'
+            label: Text
+            name: '-1c4040ba'
+            widget: string
+          - hint: 'Original text: 15 days (notice period), key: 3c5a7e1b'
+            label: Text
+            name: 3c5a7e1b
+            widget: string
+          - hint: 'Original text: 30 days (notice period), key: 30210b82'
+            label: Text
+            name: 30210b82
+            widget: string
+          - hint: 'Original text: 45 days (notice period), key: 1aef49de'
+            label: Text
+            name: 1aef49de
+            widget: string
+          - hint: 'Original text: 60 days (notice period), key: eb5d745'
+            label: Text
+            name: eb5d745
+            widget: string
+          - hint: 'Original text: 90 days (notice period), key: -12b55cf8'
+            label: Text
+            name: '-12b55cf8'
+            widget: string
+          - hint: 'Original text: 120 days (notice period), key: 223bcaf0'
+            label: Text
+            name: 223bcaf0
+            widget: string
+          - hint: 'Original text: 150 days (notice period), key: d096b3'
+            label: Text
+            name: d096b3
+            widget: string
+          - hint: 'Original text: 180 days (notice period), key: -209a9d8a'
+            label: Text
+            name: '-209a9d8a'
+            widget: string
+          - hint: 'Original text: Any other Information, key: 54d61aa8'
+            label: Text
+            name: 54d61aa8
+            widget: string
+          - hint: 'Original text: I, agree to the following, key: 5016b36e'
+            label: Text
+            name: 5016b36e
+            widget: string
+          - hint: >-
+              Original text: The information provided by me is accurate to the
+              best of my knowledge., key: -84fbe2e
+            label: Text
+            name: '-84fbe2e'
+            widget: string
+          - hint: >-
+              Original text: Registration does not guarantee placement., key:
+              597c8c6e
+            label: Text
+            name: 597c8c6e
+            widget: string
+          - hint: 'Original text: Registration fee is non-refundable., key: 4008d1a7'
+            label: Text
+            name: 4008d1a7
+            widget: string
+          - hint: "Original text: By checking this box, I agree to all the terms &\_conditions mentioned above., key: -322ed251"
+            label: Text
+            name: '-322ed251'
+            widget: string
+          - hint: "Original text: ❗Please check the box to agree to the terms &\_conditions, key: -2fff761f"
+            label: Text
+            name: '-2fff761f'
+            widget: string
+          - hint: 'Original text: Your Name, key: -77e989a8'
+            label: Text
+            name: '-77e989a8'
+            widget: string
+          - hint: 'Original text: Date, key: 2063ce'
+            label: Text
+            name: 2063ce
+            widget: string
+          - hint: 'Original text: Submit Another requirement, key: -57d06962'
+            label: Text
+            name: '-57d06962'
+            widget: string
+          - hint: 'Original text: Everything you need for a , key: -1fbc586e'
+            label: Text
+            name: '-1fbc586e'
+            widget: string
+          - hint: 'Original text: Confident Career, key: -5ce9f6ee'
+            label: Text
+            name: '-5ce9f6ee'
+            widget: string
+          - hint: 'Original text:  move., key: 3ccf525d'
+            label: Text
+            name: 3ccf525d
+            widget: string
+          - hint: >-
+              Original text: When you join Search Bloom Placements, you get more
+              than job assistance — you receive end-to-end career support built
+              around your professional growth., key: 4bd36120
+            label: Text
+            name: 4bd36120
+            widget: text
+          - hint: >-
+              Original text: We listen to your career journey, understand your
+              strengths, and help you find roles that truly match your skills
+              and aspirations., key: 49ebea86
+            label: Text
+            name: 49ebea86
+            widget: text
+          - hint: 'Original text: Find Career Advice, key: -1037e22d'
+            label: Text
+            name: '-1037e22d'
+            widget: string
+          - hint: >-
+              Original text: Our placement experts help refine your resume,
+              showcase your achievements, and help you present yourself
+              confidently., key: -4149d880
+            label: Text
+            name: '-4149d880'
+            widget: text
+          - hint: 'Original text: Refine your resume, key: 58a14fa7'
+            label: Text
+            name: 58a14fa7
+            widget: string
+          - hint: >-
+              Original text: Verified Opportunities at Top Schools, key:
+              -729de552
+            label: Text
+            name: '-729de552'
+            widget: string
+          - hint: >-
+              Original text: We work with reputed institutions across various
+              boards in India, ensuring every opportunity is genuine and
+              rewarding., key: 94fa118
+            label: Text
+            name: 94fa118
+            widget: text
+          - hint: 'Original text: Grab Opportunities, key: -666cfc23'
+            label: Text
+            name: '-666cfc23'
+            widget: string
+          - hint: >-
+              Original text: From documentation to final offer, we guide you at
+              every stage, ensuring clarity & confidence throughout the
+              process., key: 6b252dc0
+            label: Text
+            name: 6b252dc0
+            widget: text
+          - hint: 'Original text: Crack interviews, key: 540b2158'
+            label: Text
+            name: 540b2158
+            widget: string
+          - hint: 'Original text: Your , key: 51a662d'
+            label: Text
+            name: 51a662d
+            widget: string
+          - hint: 'Original text: next chapter, key: -19ceffe0'
+            label: Text
+            name: '-19ceffe0'
+            widget: string
+          - hint: 'Original text:  in education starts here., key: 5bce6862'
+            label: Text
+            name: 5bce6862
+            widget: string
+          - hint: 'Original text: Register with Us Today, key: 76132abc'
+            label: Text
+            name: 76132abc
+            widget: string
+          - hint: 'Original text: Are you a professional in the , key: -47436023'
+            label: Text
+            name: '-47436023'
+            widget: string
+          - hint: 'Original text: education sector, key: 768aeade'
+            label: Text
+            name: 768aeade
+            widget: string
+          - hint: 'Original text:  who is, key: 6dc4a0ec'
+            label: Text
+            name: 6dc4a0ec
+            widget: string
+          - hint: >-
+              Original text: With Search Bloom Placements, you save weeks of
+              searching and gain a dependable teaching community that grows with
+              you., key: -1c9d0b52
+            label: Text
+            name: '-1c9d0b52'
+            widget: text
+          - hint: 'Original text: Are you a school looking for a , key: 6ca08733'
+            label: Text
+            name: 6ca08733
+            widget: string
+          - hint: 'Original text:  placement service?, key: 2e978725'
+            label: Text
+            name: '2e978725'
+            widget: string
+          - hint: >-
+              Original text: This document is an electronic record in terms of
+              Information Technology Act, 2000 and rules thereunder as
+              applicable and the amended provisions pertaining to electronic
+              records in various statutes as amended by the Information
+              Technology Act, 2000. This electronic record is generated by a
+              computer system and does not require any physical or digital
+              signatures., key: 24bc4657
+            label: Text
+            name: 24bc4657
+            widget: text
+          - hint: >-
+              Original text: This document is published in accordance with the
+              provisions of Rule 3 (1) of the Information Technology
+              (Intermediaries guidelines) Rules, 2011 that require publishing
+              the rules and regulations, privacy policy and Terms of Use for
+              access or usage of domain name, key: 5f909382
+            label: Text
+            name: 5f909382
+            widget: text
+          - hint: 'Original text:  [searchbloomplacments.com] , key: 68466c2d'
+            label: Text
+            name: 68466c2d
+            widget: string
+          - hint: >-
+              Original text: (“Website”), including the related mobile site and
+              mobile application (hereinafter referred to as “Platform”)., key:
+              -2dbf2572
+            label: Text
+            name: '-2dbf2572'
+            widget: text
+          - hint: 'Original text: The Platform is owned by , key: 3eacb16'
+            label: Text
+            name: 3eacb16
+            widget: string
+          - hint: 'Original text: (Search Bloom Placements LLP), key: 6327fd7e'
+            label: Text
+            name: 6327fd7e
+            widget: string
+          - hint: >-
+              Original text: , a company incorporated under the Companies Act,
+              1956 with its registered office at , key: -58971598
+            label: Text
+            name: '-58971598'
+            widget: string
+          - hint: >-
+              Original text: (No C202, 2nd Floor, Elegant SpringDale, Kemp road,
+              Frazer Town, Bangalore North, Bangalore, India), key: -16440051
+            label: Text
+            name: '-16440051'
+            widget: text
+          - hint: >-
+              Original text:  (hereinafter referred to as "Platform Owner",
+              "we", "us", "our")., key: 703b625c
+            label: Text
+            name: 703b625c
+            widget: string
+          - hint: >-
+              Original text: Your use of the Platform and services and tools are
+              governed by the following terms and conditions ("Terms of Use") as
+              applicable to the Platform, including the applicable policies,
+              which are incorporated herein by way of reference. If You transact
+              on the Platform, You shall be subject to the policies that are
+              applicable to the Platform for such transaction. By mere use of
+              the Platform, You shall be contracting with the Platform Owner and
+              these terms and conditions, including the policies, constitute
+              Your binding obligations with Platform Owner. These Terms of Use
+              relate to your use of our website, goods (as applicable) or
+              services (as applicable) (collectively, “Services”). Any terms and
+              conditions proposed by You which are in addition to or which
+              conflict with these Terms of Use are expressly rejected by the
+              Platform Owner and shall be of no force or effect. These Terms of
+              Use can be modified at any time without assigning any reason. It
+              is your responsibility to periodically review these Terms of Use
+              to stay informed of updates., key: 1a72a26d
+            label: Text
+            name: 1a72a26d
+            widget: text
+          - hint: >-
+              Original text: For the purpose of these Terms of Use, wherever the
+              context so requires "you", “your” or "user" shall mean any natural
+              or legal person who has agreed to become a user/buyer on the
+              Platform., key: -67dc55ee
+            label: Text
+            name: '-67dc55ee'
+            widget: text
+          - hint: >-
+              Original text: ACCESSING, BROWSING OR OTHERWISE USING THE PLATFORM
+              INDICATES , key: 4ceb1b86
+            label: Text
+            name: 4ceb1b86
+            widget: string
+          - hint: >-
+              Original text: YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS
+              UNDER THESE TERMS OF USE, , key: -51a0729a
+            label: Text
+            name: '-51a0729a'
+            widget: string
+          - hint: >-
+              Original text: SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE
+              PROCEEDING., key: -5aeb847e
+            label: Text
+            name: '-5aeb847e'
+            widget: string
+          - hint: >-
+              Original text: The use of Platform and/or availing of our Services
+              is subject to the following Terms of Use:, key: 4cb0ad1
+            label: Text
+            name: 4cb0ad1
+            widget: text
+          - hint: >-
+              Original text: To access and use the Services, you agree to
+              provide true, accurate and complete information to us during and
+              after registration, and you shall be responsible for all acts done
+              through the use of your registered account on the Platform., key:
+              -72e0876a
+            label: Text
+            name: '-72e0876a'
+            widget: text
+          - hint: >-
+              Original text: Neither we nor any third parties provide any
+              warranty or guarantee as to the accuracy, timeliness, performance,
+              completeness or suitability of the information and materials
+              offered on this website or through the Services, for any specific
+              purpose. You acknowledge that such information and materials may
+              contain inaccuracies or errors, and we expressly exclude liability
+              for any such inaccuracies or errors to the fullest extent
+              permitted by law. , key: 197b38cd
+            label: Text
+            name: 197b38cd
+            widget: text
+          - hint: >-
+              Original text: Your use of our Services and the Platform is solely
+              and entirely at your own risk and discretion, for which we shall
+              not be liable to you in any manner. You are required to
+              independently assess and ensure that the Services meet your
+              requirements. , key: -1bb13651
+            label: Text
+            name: '-1bb13651'
+            widget: text
+          - hint: >-
+              Original text: The contents of the Platform and the Services are
+              proprietary to us and are licensed to us. You will not have any
+              authority to claim any intellectual property rights, title, or
+              interest in its contents. The contents include and are not limited
+              to the design, layout, look and graphics. , key: 15d151b1
+            label: Text
+            name: 15d151b1
+            widget: text
+          - hint: >-
+              Original text: You acknowledge that unauthorised use of the
+              Platform and/or the Services may lead to action against you as per
+              these Terms of Use and/or applicable laws. , key: -41f06ad3
+            label: Text
+            name: '-41f06ad3'
+            widget: text
+          - hint: >-
+              Original text: You agree to pay us the charges associated with
+              availing the Services. , key: 1ddd9482
+            label: Text
+            name: 1ddd9482
+            widget: string
+          - hint: >-
+              Original text: You agree not to use the Platform and/ or Services
+              for any purpose that is unlawful, illegal, or forbidden by these
+              Terms, or Indian or local laws that might apply to you. , key:
+              24ecc9cb
+            label: Text
+            name: 24ecc9cb
+            widget: text
+          - hint: >-
+              Original text: You agree and acknowledge that the website and the
+              Services may contain links to other third-party websites. On
+              accessing these links, you will be governed by the terms of use,
+              privacy policy and such other policies of such third-party
+              websites. These links are provided for your convenience to provide
+              further information., key: -5353a8ec
+            label: Text
+            name: '-5353a8ec'
+            widget: text
+          - hint: >-
+              Original text: You understand that upon initiating a transaction
+              for availing the Services, you are entering into a legally binding
+              and enforceable contract with the Platform Owner for the Services.
+              , key: 62fb3d43
+            label: Text
+            name: 62fb3d43
+            widget: text
+          - hint: >-
+              Original text: You shall indemnify and hold harmless Platform
+              Owner, its affiliates, group companies (as applicable) and their
+              respective officers, directors, agents, and employees, from any
+              claim or demand, or actions including reasonable attorney's fees,
+              made by any third party or penalty imposed due to or arising out
+              of Your breach of this Terms of Use, privacy Policy and other
+              Policies, or Your violation of any law, rules or regulations or
+              the rights (including infringement of intellectual property
+              rights) of a third party. , key: -30d42cab
+            label: Text
+            name: '-30d42cab'
+            widget: text
+          - hint: >-
+              Original text: Notwithstanding anything contained in these Terms
+              of Use, the parties shall not be liable for any failure to perform
+              an obligation under these Terms if performance is prevented or
+              delayed by a force majeure event. , key: 3f1f8232
+            label: Text
+            name: 3f1f8232
+            widget: text
+          - hint: >-
+              Original text: These Terms and any dispute or claim relating to
+              it, or its enforceability, shall be governed by and construed in
+              accordance with the laws of India. , key: 7f90cc9f
+            label: Text
+            name: 7f90cc9f
+            widget: text
+          - hint: >-
+              Original text: All disputes arising out of or in connection with
+              these Terms shall be subject to the exclusive jurisdiction of the
+              courts in Bangalore. , key: -5652e4bc
+            label: Text
+            name: '-5652e4bc'
+            widget: text
+          - hint: >-
+              Original text: All concerns or communications relating to these
+              Terms must be communicated to us using the contact information
+              provided on this website., key: 1da73a31
+            label: Text
+            name: 1da73a31
+            widget: text
+          - hint: 'Original text: This Privacy Policy describes how , key: -5f228824'
+            label: Text
+            name: '-5f228824'
+            widget: string
+          - hint: 'Original text: SEARCH BLOOM PLACEMENTS LLP, key: bbc2933'
+            label: Text
+            name: bbc2933
+            widget: string
+          - hint: >-
+              Original text:  and its affiliates(collectively "SEARCH BLOOM
+              PLACEMENTS LLP, we, our, us") collect, use, share, protect or
+              otherwise process your information/ personal data through our
+              website , key: -78d62c2d
+            label: Text
+            name: '-78d62c2d'
+            widget: text
+          - hint: 'Original text: https://searchbloomplacements.com/ , key: -e77d982'
+            label: Text
+            name: '-e77d982'
+            widget: string
+          - hint: >-
+              Original text: (hereinafter referred to as Platform). Please note
+              that you may be able to browse certain sections of the Platform
+              without registering with us. We do not offer any product/service
+              under this Platform outside India, and your personal data will
+              primarily be stored and processed in India. By visiting this
+              Platform, providing your information or availing any
+              product/service offered on the Platform, , key: 2dfc9bb3
+            label: Text
+            name: 2dfc9bb3
+            widget: text
+          - hint: >-
+              Original text: you expressly agree to be bound by the terms and
+              conditions of this Privacy Policy, the Terms of Use and the
+              applicable service/product terms and conditions,, key: -5ed6c91f
+            label: Text
+            name: '-5ed6c91f'
+            widget: text
+          - hint: >-
+              Original text:  and agree to be governed by the laws of India
+              including but not limited to the laws applicable to data
+              protection and privacy. , key: -37463dae
+            label: Text
+            name: '-37463dae'
+            widget: text
+          - hint: >-
+              Original text: If you do not agree, please do not use or access
+              our Platform., key: -1344f4df
+            label: Text
+            name: '-1344f4df'
+            widget: string
+          - hint: 'Original text: ‍, key: 200d'
+            label: Text
+            name: 200d
+            widget: string
+          - hint: 'Original text: Collection -, key: 6b4fd74b'
+            label: Text
+            name: 6b4fd74b
+            widget: string
+          - hint: >-
+              Original text:  We collect your personal data when you use our
+              Platform, services, or otherwise interact with us during the
+              course of our relationship, and related information provided from
+              time to time. Some of the information that we may collect
+              includes, but is not limited to, personal data/information
+              provided to us during sign-up/registering or using our Platform,
+              such as name, date of birth, address, telephone/mobile number,
+              email ID, and/or any such information shared as proof of identity
+              or address. Some of the sensitive personal data may be collected
+              with your consent, such as your bank account or credit or debit
+              card or other payment instrument information or biometric
+              information such as your facial features or physiological
+              information (to enable use of certain features when opted for,
+              available on the Platform) etc. all of the above being in
+              accordance with applicable law(s) You always have the option to
+              not provide information, by choosing not to use a particular
+              service or feature on the Platform. We may track your behaviour,
+              preferences, and other information that you choose to provide on
+              our Platform. This information is compiled and analysed on an
+              aggregated basis. We will also collect your information related to
+              your transactions on the Platform and such third-party business
+              partner platforms. When such a third-party business partner
+              collects your personal data directly from you, you will be
+              governed by their privacy policies. We shall not be responsible
+              for the third-party business partner’s privacy practices or the
+              content of their privacy policies, and we request you to read
+              their privacy policies before disclosing any information. If you
+              receive an email, a call from a person/association claiming to be
+              SEARCHBLOOM PLACEMENTS LLP seeking any personal data like
+              debit/credit card PIN, net-banking or mobile banking password, we
+              request you to never provide such information. If you have already
+              revealed such information, report it immediately to an appropriate
+              law enforcement agency., key: 262c79c9
+            label: Text
+            name: 262c79c9
+            widget: text
+          - hint: 'Original text: Usage - , key: -136f8b6e'
+            label: Text
+            name: '-136f8b6e'
+            widget: string
+          - hint: >-
+              Original text: We use personal data to provide the services you
+              request. To the extent we use your personal data to market to you,
+              we will provide you with the ability to opt out of such uses. We
+              use your personal data to assist sellers and business partners in
+              handling and fulfilling orders; enhancing customer experience; to
+              resolve disputes; troubleshoot problems; inform you about online
+              and offline offers, products, services, and updates; customize
+              your experience; detect and protect us against error, fraud and
+              other criminal activity; enforce our terms and conditions; conduct
+              marketing research, analysis and surveys; and as otherwise
+              described to you at the time of collection of information. You
+              understand that your access to these products/services may be
+              affected in the event that permission is not provided to us., key:
+              11be0986
+            label: Text
+            name: 11be0986
+            widget: text
+          - hint: 'Original text: Sharing -, key: 196a4dc9'
+            label: Text
+            name: 196a4dc9
+            widget: string
+          - hint: >-
+              Original text:  We may share your personal data internally within
+              our group entities, our other corporate entities, and affiliates
+              to provide you access to the services and products offered by
+              them. These entities and affiliates may market to you as a result
+              of such sharing unless you explicitly opt out. We may disclose
+              personal data to third parties such as sellers, business partners,
+              third-party service providers, including logistics partners,
+              prepaid payment instrument issuers, third-party reward programs
+              and other payment opted by you. These disclosures may be required
+              for us to provide you access to our services and products offered
+              to you, to comply with our legal obligations, to enforce our user
+              agreement, to facilitate our marketing and advertising activities,
+              and to prevent, detect, mitigate, and investigate fraudulent or
+              illegal activities related to our services. We may disclose
+              personal and sensitive personal data to government agencies or
+              other authorised law enforcement agencies if required to do so by
+              law or in the good faith belief that such disclosure is reasonably
+              necessary to respond to subpoenas, court orders, or other legal
+              process. We may disclose personal data to law enforcement offices,
+              third party rights owners, or others in the good faith belief that
+              such disclosure is reasonably necessary to: enforce our Terms of
+              Use or Privacy Policy; respond to claims that an advertisement,
+              posting or other content violates the rights of a third party; or
+              protect the rights, property or personal safety of our users or
+              the general public., key: 1760437f
+            label: Text
+            name: 1760437f
+            widget: text
+          - hint: 'Original text: Security Precautions -, key: 37a8c278'
+            label: Text
+            name: 37a8c278
+            widget: string
+          - hint: >-
+              Original text:  To protect your personal data from unauthorised
+              access or disclosure, loss or misuse, we adopt reasonable security
+              practices and procedures. Once your information is in our
+              possession or whenever you access your account information, we
+              adhere to our security guidelines to protect it against
+              unauthorised access and offer the use of a secure server. However,
+              the transmission of information is not completely secure for
+              reasons beyond our control. By using the Platform, the users
+              accept the security implications of data transmission over the
+              internet and the World Wide Web, which cannot always be guaranteed
+              as completely secure, and therefore, there will always remain
+              certain inherent risks regarding use of the Platform. Users are
+              responsible for ensuring the protection of login and password
+              records for their accounts., key: 1612c06e
+            label: Text
+            name: 1612c06e
+            widget: text
+          - hint: 'Original text: Data Deletion and Retention -, key: -41430dda'
+            label: Text
+            name: '-41430dda'
+            widget: string
+          - hint: >-
+              Original text:  You have an option to delete your account by
+              visiting your profile and settings on our Platform. This action
+              would result in you losing all information related to your
+              account. You may also write to us at the contact information
+              provided below to assist you with these requests. We may in the
+              event of any pending grievance, claims, pending shipments or any
+              other services we may refuse or delay deletion of the account.
+              Once the account is deleted, you will lose access to it. We retain
+              your personal data information for a period no longer than is
+              required for the purpose for which it was collected or as required
+              under any applicable law. However, we may retain data related to
+              you if we believe it may be necessary to prevent fraud or future
+              abuse or for other legitimate purposes. We may continue to retain
+              your data in anonymised form for analytical and research
+              purposes., key: 145b76a1
+            label: Text
+            name: 145b76a1
+            widget: text
+          - hint: 'Original text: Your Rights -, key: 4d9db971'
+            label: Text
+            name: 4d9db971
+            widget: string
+          - hint: >-
+              Original text:  You may access, rectify, and update your personal
+              data directly through the functionalities provided on the
+              Platform., key: -6cbdcc96
+            label: Text
+            name: '-6cbdcc96'
+            widget: text
+          - hint: 'Original text: Consent -, key: 5d794587'
+            label: Text
+            name: 5d794587
+            widget: string
+          - hint: >-
+              Original text:  By visiting our Platform or by providing your
+              information, you consent to the collection, use, storage,
+              disclosure and otherwise processing of your information on the
+              Platform in accordance with this Privacy Policy. If you disclose
+              to us any personal data relating to other people, you represent
+              that you have the authority to do so and permit us to use the
+              information in accordance with this Privacy Policy. You, while
+              providing your personal data over the Platform or any partner
+              platforms or establishments, consent to us (including our other
+              corporate entities, affiliates, lending partners, technology
+              partners, marketing channels, business partners and other third
+              parties) to contact you through SMS, instant messaging apps, call
+              and/or e-mail for the purposes specified in this Privacy Policy.
+              You have an option to withdraw the consent that you have already
+              provided by writing to the Grievance Officer at the contact
+              information provided below. Please mention “Withdrawal of consent
+              for processing personal data” in your subject line of your
+              communication. We may verify such requests before acting on them.
+              However, please note that your withdrawal of consent will not be
+              retrospective and will be in accordance with the Terms of Use,
+              this Privacy Policy, and applicable laws. In the event you
+              withdraw consent given to us under this Privacy Policy, we reserve
+              the right to restrict or deny the provision of our services for
+              which we consider such information to be necessary., key: 23798cea
+            label: Text
+            name: 23798cea
+            widget: text
+          - hint: 'Original text: Changes to this Privacy Policy -, key: 72751ad1'
+            label: Text
+            name: 72751ad1
+            widget: string
+          - hint: >-
+              Original text:  Please check our Privacy Policy periodically for
+              changes. We may update this Privacy Policy to reflect changes to
+              our information practices. We may alert/notify you about the
+              significant changes to the Privacy Policy, in the manner as may be
+              required under applicable laws., key: 39b7c82d
+            label: Text
+            name: 39b7c82d
+            widget: text
+          - hint: 'Original text:  does , key: 3c5040a7'
+            label: Text
+            name: 3c5040a7
+            widget: string
+          - hint: 'Original text: not provide, key: -1256dac'
+            label: Text
+            name: '-1256dac'
+            widget: string
+          - hint: 'Original text:  any refunds. , key: -4915a267'
+            label: Text
+            name: '-4915a267'
+            widget: string
+          - hint: 'Original text: 404, key: c938'
+            label: Text
+            name: c938
+            widget: string
+          - hint: >-
+              Original text: This page might be deleted or inactive. , key:
+              7539b88e
+            label: Text
+            name: 7539b88e
+            widget: string
+          - hint: 'Original text: Please go back to the homepage, key: 5eea752b'
+            label: Text
+            name: 5eea752b
+            widget: string
+          - hint: 'Original text: Go back to Homepage, key: -6c97698e'
+            label: Text
+            name: '-6c97698e'
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: tel:+919980043752, key: 478cffc1'
+            label: Link
+            name: 478cffc1
+            widget: string
+          - hint: >-
+              Original link:
+              mailto:info@searchbloomplacements.com?subject=Enquiry%20about%20your%20placement%20services,
+              key: -3273cfc8
+            label: Link
+            name: '-3273cfc8'
+            widget: string
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: /candidate-registration/, key: 25ef0ebd'
+            label: Link
+            name: 25ef0ebd
+            widget: string
+          - hint: 'Original link: #services_section, key: e7e5227'
+            label: Link
+            name: e7e5227
+            widget: string
+          - hint: 'Original link: #faq_section, key: 6470d6b9'
+            label: Link
+            name: 6470d6b9
+            widget: string
+          - hint: 'Original link: #school-form, key: 59a5777a'
+            label: Link
+            name: 59a5777a
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: #footer-contact-details, key: 4de8ed46'
+            label: Link
+            name: 4de8ed46
+            widget: string
+          - hint: >-
+              Original link:
+              https://searchbloomplacements.com/#services_section, key:
+              -3aa6037b
+            label: Link
+            name: '-3aa6037b'
+            widget: string
+          - hint: >-
+              Original link:
+              https://searchbloomplacements.com/candidate-registration/#candidate-services_section,
+              key: -7e6c3079
+            label: Link
+            name: '-7e6c3079'
+            widget: string
+          - hint: >-
+              Original link:
+              https://searchbloomplacements.com/candidate-registration/#career-guidance,
+              key: 737b75ee
+            label: Link
+            name: 737b75ee
+            widget: string
+          - hint: >-
+              Original link:
+              https://searchbloomplacements.com/candidate-registration/#resume-interview-assistance,
+              key: -10079cb5
+            label: Link
+            name: '-10079cb5'
+            widget: string
+          - hint: >-
+              Original link:
+              https://searchbloomplacements.com/candidate-registration/#career-support,
+              key: 451e4a79
+            label: Link
+            name: 451e4a79
+            widget: string
+          - hint: 'Original link: /terms-conditions/, key: -6775931e'
+            label: Link
+            name: '-6775931e'
+            widget: string
+          - hint: 'Original link: /privacy-policy/, key: -2f934417'
+            label: Link
+            name: '-2f934417'
+            widget: string
+          - hint: 'Original link: /refund-policy/, key: 58314dd7'
+            label: Link
+            name: 58314dd7
+            widget: string
+          - hint: 'Original link: https://bento.me/salmansalah, key: -22a74b7'
+            label: Link
+            name: '-22a74b7'
+            widget: string
+          - hint: 'Original link: #candidate-services_section, key: -47b7f68f'
+            label: Link
+            name: '-47b7f68f'
+            widget: string
+          - hint: 'Original link: #candidate-faq_section, key: -6dafc6d1'
+            label: Link
+            name: '-6dafc6d1'
+            widget: string
+          - hint: 'Original link: #candidate-form, key: -6667e64f'
+            label: Link
+            name: '-6667e64f'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: i152d7e1f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i4a6bef55
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2c47fa8c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6c014f4a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-469d376e'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-28841547'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3adcfd8a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4e4ee2a4'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4d672dcd
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1cebcfe9
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-255a6a1d'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-26b354ce'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-35624854'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-28d5efe0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1b7c572a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-760f2f5e'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4d9d3c91
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 312a8264
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 17a1699b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '38705726'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4347a2bb
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 561e9e35
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7d4db589
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-665ee58a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: ca9c97a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1b21a5b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 31a57a2f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '79653090'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 332eebc9
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1dc8cafc'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2e1a6741
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7c87ebf0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-619007ff'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 45f24d95
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-356d9358'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: a13bf65
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1afa66c3
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1f0da95b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1befc39f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 235feed1
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4d58c6c6
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 29c7d410
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 58dba26b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-779f3d90'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7372413b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1e16b660
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1e0b2b47'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-34e8215b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4f75f344
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-157f322'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7e1641cd'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1920c5b5'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1d9cc7de
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+local_backend: true
+publish_mode: editorial_workflow

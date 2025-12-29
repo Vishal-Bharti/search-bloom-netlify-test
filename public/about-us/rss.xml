@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>About Us </title>
+    <description>About Us  Feed</description>
+    <link></link>
+    <pubDate>Fri, 26 Dec 2025 20:38:50 GMT</pubDate>
+    <atom:link href="/about-us/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Azeeza Easa</title>
+            
+            <link>/about-us/azeeza-easa/</link>
+            <pubDate>Fri, 26 Dec 2025 20:38:50 GMT</pubDate>
+            <guid>/about-us/azeeza-easa/</guid>
+            
+            <content type="html">&lt;p&gt;Azeeza Easa is an accomplished educational leader with &lt;strong&gt;40+ years of experience&lt;/strong&gt; in shaping schools and strengthening educational systems in India.&lt;/p&gt;
+&lt;p&gt;She holds an M.A. in Psychology, M.Ed., and has attended a course in Master Trainer Training for Cambridge International Diploma for Teachers and Trainers conducted by University of Cambridge International Examinations.&lt;/p&gt;
+&lt;p&gt;In addition, she has successfully completed the Auditor Training Course for School  Education by Centre of Assessments for Excellence International (COAE)as per ISO 21001:2018 ( Management Systems for Educational Organisations) and has consistently enhanced her expertise through seminars and professional development programmes.&lt;/p&gt;
+</content>
+            
+        </item>
+  </channel>
+</rss>

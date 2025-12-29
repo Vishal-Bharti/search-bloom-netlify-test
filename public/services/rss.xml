@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Services </title>
+    <description>Services  Feed</description>
+    <link></link>
+    <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+    <atom:link href="/services/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Teacher Recruitment</title>
+            
+            <link>/services/teacher-recruitment/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/services/teacher-recruitment/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+        <item>
+            <title>Leadership Hiring</title>
+            
+            <link>/services/leadership-hiring/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/services/leadership-hiring/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+        <item>
+            <title>Exit Interviews</title>
+            
+            <link>/services/exit-interviews/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/services/exit-interviews/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+        <item>
+            <title>Advisory Services</title>
+            
+            <link>/services/advisory-services/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/services/advisory-services/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+        <item>
+            <title>Admin Hiring</title>
+            
+            <link>/services/admin-hiring/</link>
+            <pubDate>Fri, 26 Dec 2025 20:04:52 GMT</pubDate>
+            <guid>/services/admin-hiring/</guid>
+            
+            <content type="html"></content>
+            
+        </item>
+  </channel>
+</rss>
