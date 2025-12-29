@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Sun, 28 Dec 2025 13:52:07 GMT" /><meta charset="utf-8">
+<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Mon, 29 Dec 2025 19:46:51 GMT" /><meta charset="utf-8">
   
   
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -358,7 +358,7 @@ a {
                 </div>
               </div>
               <div class="u-form-block w-form">
-                <form name="wf-form-School-Registration-Form" data-netlify="true" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81" novalidate>
+                <form action="/success.html" method="POST" name="wf-form-School-Registration-Form" data-netlify="true" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
                   <input type="hidden" name="form-name" value="wf-form-School-Registration-Form"/>
                     <div class="u-form-steps-wrapper">
                       <div data-form="step" class="u-form-step-item">
@@ -485,7 +485,7 @@ a {
                               </div>
                               <div class="u-label-form-field">
                                 <div class="u-field-label"><label for="Name-of-School">School Website</label></div>
-                                <div class="u-form-field-wrapper"><input class="form-field_short u-form-field w-input" maxlength="256" name="School-Website" data-name="School Website" placeholder="Searchbloomplacements.com" type="text" id="School-Website"></div>
+                                <div class="u-form-field-wrapper"><input class="form-field_short u-form-field w-input" maxlength="256" name="School-Email-ID" data-name="School Email ID" placeholder="Searchbloomplacements.com" type="url" id="School-Website"></div>
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
@@ -1119,53 +1119,14 @@ a {
     const successMessage = document.querySelector('.u-success-message-block');
     const errorMessage = document.querySelector('.u-error-message-block');
 
-    if (form && successMessage) {
+    if (successMessage) {
       // Hide success and error messages initially
       successMessage.style.display = 'none';
       if (errorMessage) errorMessage.style.display = 'none';
-
-      // Check if we're returning from a successful form submission
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('success') || urlParams.has('form-success')) {
-        // Show success message if redirected back with success parameter
-        const formElement = document.querySelector('.u-form');
-        if (formElement) {
-          formElement.style.display = 'none';
-        }
-        successMessage.style.display = 'block';
-      }
-
-      // Handle form submission success and error states
-      form.addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-
-  try {
-    const response = await fetch("/.netlify/functions/submit-form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-      window.location.href = "/success.html";
-    } else {
-      alert("Form submission failed. Please try again.");
     }
-  } catch (error) {
-    console.error("Submission error:", error);
-    alert("Network error. Please try again.");
-  }
-});
 
-      
-      // Handle Netlify form success and error states
-      
-    }
+    // Let Netlify handle the form submission naturally
+    // The form will submit to the action URL and Netlify will process it
   });
   </script>
   </body>

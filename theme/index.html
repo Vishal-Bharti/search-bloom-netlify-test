@@ -402,7 +402,7 @@ a {
                 </div>
               </div>
               <div class="u-form-block w-form">
-                <form action="/success/" name="wf-form-School-Registration-Form" data-netlify="true" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
+                <form action="/success.html" method="POST" name="wf-form-School-Registration-Form" data-netlify="true" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
                   <input type="hidden" name="form-name" value="wf-form-School-Registration-Form"/>
                     <div class="u-form-steps-wrapper">
                       <div data-form="step" class="u-form-step-item">
@@ -1100,54 +1100,14 @@ a {
     const successMessage = document.querySelector('.u-success-message-block');
     const errorMessage = document.querySelector('.u-error-message-block');
 
-    if (form && successMessage) {
+    if (successMessage) {
       // Hide success and error messages initially
       successMessage.style.display = 'none';
       if (errorMessage) errorMessage.style.display = 'none';
-
-      // Check if we're returning from a successful form submission
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('success') || urlParams.has('form-success')) {
-        // Show success message if redirected back with success parameter
-        const formElement = document.querySelector('.u-form');
-        if (formElement) {
-          formElement.style.display = 'none';
-        }
-        successMessage.style.display = 'block';
-      }
-
-      // Handle form submission success and error states
-      form.addEventListener('submit', function(e) {
-        // Let Netlify handle the submission, but we can add custom handling
-        // The form will be submitted normally and Netlify will handle the redirect
-      });
-      
-      // Handle Netlify form success and error states
-      window.addEventListener('load', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const successMessage = document.querySelector('.u-success-message-block');
-        const errorMessage = document.querySelector('.u-error-message-block');
-        const formElement = document.querySelector('.u-form');
-        
-        if (urlParams.has('success') || urlParams.has('form-success')) {
-          // Show success message if redirected back with success parameter
-          if (formElement) {
-            formElement.style.display = 'none';
-          }
-          if (successMessage) {
-            successMessage.style.display = 'block';
-          }
-        } else if (urlParams.has('error')) {
-          // Show error message if there was an error
-          if (formElement) {
-            formElement.style.display = 'none';
-          }
-          if (errorMessage) {
-            errorMessage.style.display = 'block';
-          }
-        }
-      });
     }
+
+    // Let Netlify handle the form submission naturally
+    // The form will submit to the action URL and Netlify will process it
   });
   </script>
   </body>
