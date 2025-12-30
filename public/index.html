@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:28:48 GMT" /><meta charset="utf-8">
+<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:39:45 GMT" /><meta charset="utf-8">
   
   
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -438,7 +438,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div><input class="u-form-field hide w-input" maxlength="256" name="Name-of-School" data-name="Name of School" placeholder="" type="text" id="Name-of-School-hidden">
+                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -489,7 +489,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div><input class="u-form-field hide w-input" maxlength="256" name="Contact-Name" data-name="Contact Name" placeholder="" type="text" id="Contact-Name-hidden">
+                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -505,7 +505,7 @@ a {
                             <div class="form_title-subtext u-title-subtext">
                               <h2 class="form_title text-size-h2">Transport Facility</h2>
                               <h2 class="form_title text-size-h6">Please help us answer a commonly asked question by teachers & school staff</h2>
-                              <div class="u-form-field-wrapper"><input class="u-form-field hide w-input" maxlength="256" name="Transport-free-or-charged" data-name="Transport free or charged?" placeholder="Please enter your full name" type="text" id="Transport-free-or-charged"></div>
+                              <div class="u-form-field-wrapper"></div>
                             </div>
                             <div class="form-fields_vertical-stack u-form-fields-stack">
                               <div class="radio-btn_form-field u-label-form-field">
@@ -530,7 +530,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div><input class="u-form-field hide w-input" maxlength="256" name="Transport-Availability" data-name="Transport Availability" placeholder="" type="text" id="Transport-Availability">
+                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -547,7 +547,7 @@ a {
                               <h2 class="form_title text-size-h2">Recruitment Needs</h2>
                               <h2 class="form_title text-size-h6">Please tell us more about the teachers / staff you need.</h2>
                               <div class="u-form-field-wrapper">
-                                <div data-text="error-message" class="u-error-message">❗Scroll Down to fill required fields</div><input class="u-form-field hide w-input" maxlength="256" name="Additional-Information" data-name="Additional Information" placeholder="Please enter your full name" type="text" id="Additional-Information-hidden">
+                                <div data-text="error-message" class="u-error-message">❗Scroll Down to fill required fields</div>
                               </div>
                             </div>
                             <div class="form-fields_vertical-stack u-form-fields-stack">
@@ -569,7 +569,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div><input class="u-form-field hide w-input" maxlength="256" name="Which-Class-is-the-teacher-required-for" data-name="Which Class is the teacher required for?" placeholder="" type="text" id="Which-Class-is-the-teacher-required-for-hidden">
+                              <div data-text="error-message" class="u-error-message">❗Scroll Up to fill required fields</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -1105,30 +1105,29 @@ a {
   });
   </script>
     <script>
-  // Handle Netlify form submission and redirect to success
+  // After form submission, handle redirect to success page
+  window.addEventListener('load', function() {
+    // Check if we just submitted (page reloaded after form submission)
+    if (window.location.search === '' && window.location.pathname === '/') {
+      // Check localStorage to see if form was just submitted
+      if (sessionStorage.getItem('formSubmitted')) {
+        sessionStorage.removeItem('formSubmitted');
+        // Small delay to ensure Netlify processed the form
+        setTimeout(function() {
+          window.location.href = '/success.html';
+        }, 500);
+      }
+    }
+  });
+  
+  // Mark form as submitted before it posts
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
-    
     if (form) {
       form.addEventListener('submit', function(e) {
-        // Encode the form data properly
-        const formData = new FormData(form);
-        
-        // Send to Netlify
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData)
-        }).then(function() {
-          // On success, redirect to success page
-          window.location.href = '/success.html';
-        }).catch(function() {
-          // Even on error, redirect to success page
-          window.location.href = '/success.html';
-        });
-        
-        // Prevent default form submission
-        return false;
+        // Mark that form was submitted
+        sessionStorage.setItem('formSubmitted', 'true');
+        // Let the form submit naturally (the multi-step library will handle it)
       });
     }
   });

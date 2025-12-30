@@ -482,7 +482,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div><input class="u-form-field hide w-input" maxlength="256" name="Name-of-School" data-name="Name of School" placeholder="" type="text" id="Name-of-School-hidden">
+                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -533,7 +533,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div><input class="u-form-field hide w-input" maxlength="256" name="Contact-Name" data-name="Contact Name" placeholder="" type="text" id="Contact-Name-hidden">
+                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -549,7 +549,7 @@ a {
                             <div class="form_title-subtext u-title-subtext">
                               <h2 class="form_title text-size-h2">{{ texts.4f7075fa }}</h2>
                               <h2 class="form_title text-size-h6">{{ texts.4ed9ed86 }}</h2>
-                              <div class="u-form-field-wrapper"><input class="u-form-field hide w-input" maxlength="256" name="Transport-free-or-charged" data-name="Transport free or charged?" placeholder="Please enter your full name" type="text" id="Transport-free-or-charged"></div>
+                              <div class="u-form-field-wrapper"></div>
                             </div>
                             <div class="form-fields_vertical-stack u-form-fields-stack">
                               <div class="radio-btn_form-field u-label-form-field">
@@ -574,7 +574,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div><input class="u-form-field hide w-input" maxlength="256" name="Transport-Availability" data-name="Transport Availability" placeholder="" type="text" id="Transport-Availability">
+                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -591,7 +591,7 @@ a {
                               <h2 class="form_title text-size-h2">{{ texts.236216d9 }}</h2>
                               <h2 class="form_title text-size-h6">{{ texts.484e62bb }}</h2>
                               <div class="u-form-field-wrapper">
-                                <div data-text="error-message" class="u-error-message">{{ texts.-dd01d80 }}</div><input class="u-form-field hide w-input" maxlength="256" name="Additional-Information" data-name="Additional Information" placeholder="Please enter your full name" type="text" id="Additional-Information-hidden">
+                                <div data-text="error-message" class="u-error-message">{{ texts.-dd01d80 }}</div>
                               </div>
                             </div>
                             <div class="form-fields_vertical-stack u-form-fields-stack">
@@ -613,7 +613,7 @@ a {
                               </div>
                             </div>
                             <div class="bottom_field-wrapper u-form-field-wrapper">
-                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div><input class="u-form-field hide w-input" maxlength="256" name="Which-Class-is-the-teacher-required-for" data-name="Which Class is the teacher required for?" placeholder="" type="text" id="Which-Class-is-the-teacher-required-for-hidden">
+                              <div data-text="error-message" class="u-error-message">{{ texts.4e32f079 }}</div>
                             </div>
                           </div>
                           <div class="form-wrapper_scroll-shadow u-scroll-shadow"></div>
@@ -1086,30 +1086,29 @@ a {
   });
   </script>
     <script>
-  // Handle Netlify form submission and redirect to success
+  // After form submission, handle redirect to success page
+  window.addEventListener('load', function() {
+    // Check if we just submitted (page reloaded after form submission)
+    if (window.location.search === '' && window.location.pathname === '/') {
+      // Check localStorage to see if form was just submitted
+      if (sessionStorage.getItem('formSubmitted')) {
+        sessionStorage.removeItem('formSubmitted');
+        // Small delay to ensure Netlify processed the form
+        setTimeout(function() {
+          window.location.href = '/success.html';
+        }, 500);
+      }
+    }
+  });
+  
+  // Mark form as submitted before it posts
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
-    
     if (form) {
       form.addEventListener('submit', function(e) {
-        // Encode the form data properly
-        const formData = new FormData(form);
-        
-        // Send to Netlify
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData)
-        }).then(function() {
-          // On success, redirect to success page
-          window.location.href = '/success.html';
-        }).catch(function() {
-          // Even on error, redirect to success page
-          window.location.href = '/success.html';
-        });
-        
-        // Prevent default form submission
-        return false;
+        // Mark that form was submitted
+        sessionStorage.setItem('formSubmitted', 'true');
+        // Let the form submit naturally (the multi-step library will handle it)
       });
     }
   });
