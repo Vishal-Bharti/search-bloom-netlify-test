@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:39:45 GMT" /><meta charset="utf-8">
+<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:41:11 GMT" /><meta charset="utf-8">
   
   
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -1105,29 +1105,16 @@ a {
   });
   </script>
     <script>
-  // After form submission, handle redirect to success page
-  window.addEventListener('load', function() {
-    // Check if we just submitted (page reloaded after form submission)
-    if (window.location.search === '' && window.location.pathname === '/') {
-      // Check localStorage to see if form was just submitted
-      if (sessionStorage.getItem('formSubmitted')) {
-        sessionStorage.removeItem('formSubmitted');
-        // Small delay to ensure Netlify processed the form
-        setTimeout(function() {
-          window.location.href = '/success.html';
-        }, 500);
-      }
-    }
-  });
-  
-  // Mark form as submitted before it posts
+  // Redirect to success page after form submission
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
     if (form) {
       form.addEventListener('submit', function(e) {
-        // Mark that form was submitted
-        sessionStorage.setItem('formSubmitted', 'true');
-        // Let the form submit naturally (the multi-step library will handle it)
+        // Redirect to success page after a short delay
+        // (gives Netlify time to process the submission)
+        setTimeout(function() {
+          window.location.href = '/success.html';
+        }, 1000);
       });
     }
   });
