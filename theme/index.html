@@ -402,7 +402,7 @@ a {
                 </div>
               </div>
               <div class="u-form-block w-form">
-                <form action="/success.html" method="POST" name="wf-form-School-Registration-Form" data-netlify="true" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
+                <form method="POST" name="wf-form-School-Registration-Form" data-netlify="true" netlify-honeypot="honeypot" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
                   <input type="hidden" name="form-name" value="wf-form-School-Registration-Form"/>
                     <div class="u-form-steps-wrapper">
                       <div data-form="step" class="u-form-step-item">
@@ -1086,14 +1086,19 @@ a {
   });
   </script>
     <script>
-  // Ensure form can submit on last step
+  // Handle Netlify form submission and redirect
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
     
     if (form) {
-      // Let Netlify handle form submissions naturally
-      // The multi-step script will manage validation
-      console.log('Form ready for submission');
+      form.addEventListener('submit', function(e) {
+        // Let Netlify's form submission handler work
+        // After successful submission, redirect to success page
+        setTimeout(function() {
+          window.location.href = '/success.html';
+        }, 1000);
+      });
+      console.log('Form ready for Netlify submission');
     }
   });
   </script>

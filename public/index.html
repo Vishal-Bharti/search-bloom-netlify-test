@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Mon, 29 Dec 2025 20:27:12 GMT" /><meta charset="utf-8">
+<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:06:17 GMT" /><meta charset="utf-8">
   
   
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -358,7 +358,7 @@ a {
                 </div>
               </div>
               <div class="u-form-block w-form">
-                <form action="/success.html" method="POST" name="wf-form-School-Registration-Form" data-netlify="true" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
+                <form method="POST" name="wf-form-School-Registration-Form" data-netlify="true" netlify-honeypot="honeypot" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
                   <input type="hidden" name="form-name" value="wf-form-School-Registration-Form"/>
                     <div class="u-form-steps-wrapper">
                       <div data-form="step" class="u-form-step-item">
@@ -1105,55 +1105,21 @@ a {
   });
   </script>
     <script>
-  // Ensure form can submit on last step
+  // Handle Netlify form submission and redirect
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
     
     if (form) {
-      // Let Netlify handle form submissions naturally
-      // The multi-step script will manage validation
-      console.log('Form ready for submission');
+      form.addEventListener('submit', function(e) {
+        // Let Netlify's form submission handler work
+        // After successful submission, redirect to success page
+        setTimeout(function() {
+          window.location.href = '/success.html';
+        }, 1000);
+      });
+      console.log('Form ready for Netlify submission');
     }
   });
   </script>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".u-form");
-
-  if (!form) {
-    console.error("Form not found");
-    return;
-  }
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log("Submitting data:", data);
-
-    try {
-      const res = await fetch("/.netlify/functions/submit-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      const result = await res.json();
-      console.log("Server response:", result);
-
-      alert("Form submitted successfully!");
-      form.reset();
-    } catch (err) {
-      console.error("Submit failed:", err);
-      alert("Submission failed");
-    }
-  });
-});
-</script>
-
   </body>
   </html>
