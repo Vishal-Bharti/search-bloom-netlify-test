@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:06:17 GMT" /><meta charset="utf-8">
+<html data-wf-page="69063f26cb5f9a3bed04d260" data-wf-site="69063f25cb5f9a3bed04d211" lang="en"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com"><title>Search Bloom Placements - Home Page</title><meta property="og:title" content="Search Bloom Placements - Home Page" /><meta name="description" content="We match committed educators, support staff, and school leaders to State, CISCE, CBSE, IGCSE, and IB Board Schools. Carefully screened, culture-fit tested, and ready to join your school."><meta http-equiv="last-modified" content="Tue, 30 Dec 2025 09:22:33 GMT" /><meta charset="utf-8">
   
   
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -358,7 +358,7 @@ a {
                 </div>
               </div>
               <div class="u-form-block w-form">
-                <form method="POST" name="wf-form-School-Registration-Form" data-netlify="true" netlify-honeypot="honeypot" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
+                <form action="/" method="POST" name="wf-form-School-Registration-Form" data-netlify="true" netlify-honeypot="honeypot" class="u-form" data-form="multistep" data-custom-error-message="true" data-name="School Registration Form" data-enter="true" data-wf-page-id="69063f26cb5f9a3bed04d260" data-wf-element-id="a7b83e1b-3954-fbdc-4452-8d1b13528f81">
                   <input type="hidden" name="form-name" value="wf-form-School-Registration-Form"/>
                     <div class="u-form-steps-wrapper">
                       <div data-form="step" class="u-form-step-item">
@@ -1105,19 +1105,21 @@ a {
   });
   </script>
     <script>
-  // Handle Netlify form submission and redirect
+  // Redirect to success page after Netlify processes form
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[data-netlify="true"]');
     
     if (form) {
-      form.addEventListener('submit', function(e) {
-        // Let Netlify's form submission handler work
-        // After successful submission, redirect to success page
+      const originalSubmit = form.onsubmit;
+      form.onsubmit = function(e) {
+        // Don't prevent default - let Netlify handle it
+        // After page loads, redirect to success
         setTimeout(function() {
-          window.location.href = '/success.html';
-        }, 1000);
-      });
-      console.log('Form ready for Netlify submission');
+          if (window.location.pathname === '/') {
+            window.location.href = '/success.html';
+          }
+        }, 800);
+      };
     }
   });
   </script>
